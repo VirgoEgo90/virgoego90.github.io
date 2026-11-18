@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070709" />
+  <meta name="description" content="Neon Sankofa Colorways — an Afrofuturist outfit palette generator for designers and dressers. Build a harmonious color story, recolor a one-piece live, and export your hex codes." />
+  <title>Neon Sankofa Colorways — Palette Generator</title>
+  <link rel="canonical" href="https://virgoego90.github.io/colorways/" />
+  <meta property="og:title" content="Neon Sankofa Colorways — Palette Generator" />
+  <meta property="og:description" content="Neon Sankofa Colorways — an Afrofuturist outfit palette generator for designers and dressers. Build a harmonious color story, recolor a one-piece live, and export your hex codes." />
+  <meta property="og:url" content="https://virgoego90.github.io/colorways/" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@300;400;500;600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="wordmark" href="./" aria-label="Neon Sankofa Colorways home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" stroke-width="1.25" />
+          <path d="M10 20.5c2.2-6.5 5-10 6-13.5 1 3.5 3.8 7 6 13.5" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" />
+          <circle cx="16" cy="21.5" r="1.4" fill="currentColor" />
+        </svg>
+      </span>
+      <span class="wordmark-text">
+        <span class="brand">Neon Sankofa</span>
+        <span class="product">Colorways</span>
+      </span>
+    </a>
+    <nav class="header-nav" aria-label="Primary">
+      <a class="nav-link" href="https://virgoego90.github.io/blog/">Journal</a>
+      <a class="nav-link" href="#how">How it works</a>
+      <a class="nav-link pro-nav" href="#pro">Pro</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">Free studio tool</p>
+      <h1 id="hero-title">Build a palette.<br />Recolor the one-piece.</h1>
+      <p class="lede">A colorway generator for designers and dressers working in gold, indigo, chrome, and night — plus kente- and adire-inspired combinations. Lock what you like, regenerate the rest, and take the hex codes with you.</p>
+    </section>
+
+    <section class="studio" aria-label="Colorway studio">
+      <aside class="panel panel-themes">
+        <div class="panel-head">
+          <h2>Theme</h2>
+          <span class="panel-kicker" id="theme-count"></span>
+        </div>
+        <fieldset class="theme-list" id="theme-list">
+          <legend class="visually-hidden">Palette theme</legend>
+        </fieldset>
+        <div class="theme-actions">
+          <button type="button" class="btn btn-gold" id="btn-generate">
+            <span>Generate</span>
+            <kbd>G</kbd>
+          </button>
+          <button type="button" class="btn btn-ghost" id="btn-surprise">Surprise me</button>
+        </div>
+        <p class="theme-note" id="theme-note"></p>
+      </aside>
+
+      <div class="stage" id="stage">
+        <div class="stage-frame">
+          <div class="stage-meta">
+            <span>One-piece / Front</span>
+            <span id="stage-name">—</span>
+          </div>
+          <div class="silhouette-wrap" id="silhouette-wrap">
+            <svg id="silhouette" class="silhouette" viewBox="0 0 320 640" role="img" aria-labelledby="sil-title sil-desc">
+              <title id="sil-title">One-piece jumpsuit preview</title>
+              <desc id="sil-desc">A sleeveless high-neck jumpsuit whose panels update to match the current palette.</desc>
+              <defs>
+                <linearGradient id="grad-ground" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#050506" />
+                  <stop offset="0.45" stop-color="#121214" />
+                  <stop offset="1" stop-color="#050506" />
+                </linearGradient>
+                <linearGradient id="grad-field" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#1a2744" />
+                  <stop offset="0.5" stop-color="#24355c" />
+                  <stop offset="1" stop-color="#1a2744" />
+                </linearGradient>
+                <linearGradient id="grad-accent" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#e8c547" />
+                  <stop offset="1" stop-color="#b8860b" />
+                </linearGradient>
+                <linearGradient id="grad-metal" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#f3f1ea" />
+                  <stop offset="1" stop-color="#9aa0ac" />
+                </linearGradient>
+                <clipPath id="clip-body">
+                  <path d="M140 80C118 74 100 86 88 102C80 116 86 130 114 156L118 250C116 272 108 298 102 320L86 592C84 608 96 618 114 618H138C150 618 154 606 152 592L160 338H160L168 592C166 606 170 618 182 618H206C224 618 236 608 234 592L218 320C212 298 204 272 202 250L206 156C234 130 240 116 232 102C220 86 202 74 180 80C170 90 150 90 140 80Z" />
+                </clipPath>
+                <filter id="soft-shadow" x="-25%" y="-5%" width="150%" height="110%">
+                  <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity="0.55" />
+                </filter>
+              </defs>
+
+              <g class="guides" stroke="#c5c8d0" stroke-opacity="0.12" fill="none" stroke-width="0.6">
+                <line x1="160" y1="14" x2="160" y2="626" stroke-dasharray="2 6" />
+                <line x1="44" y1="28" x2="276" y2="28" />
+                <line x1="48" y1="622" x2="272" y2="622" />
+              </g>
+
+              <g filter="url(#soft-shadow)">
+                <!-- ground: sleeveless jumpsuit with an open neckline (background shows through the collar) -->
+                <path class="part part-ground" data-role="ground" fill="url(#grad-ground)" d="M140 80C118 74 100 86 88 102C80 116 86 130 114 156L118 250C116 272 108 298 102 320L86 592C84 608 96 618 114 618H138C150 618 154 606 152 592L160 338H160L168 592C166 606 170 618 182 618H206C224 618 236 608 234 592L218 320C212 298 204 272 202 250L206 156C234 130 240 116 232 102C220 86 202 74 180 80C170 90 150 90 140 80Z" />
+
+                <!-- field: side panels running into the outseam -->
+                <g clip-path="url(#clip-body)">
+                  <path class="part part-field" data-role="field" fill="url(#grad-field)" opacity="0.94" d="M100 158L124 152L132 250C136 280 128 310 122 340L104 592H82L98 326C96 290 96 230 100 158Z" />
+                  <path class="part part-field" data-role="field" fill="url(#grad-field)" opacity="0.94" d="M220 158L196 152L188 250C184 280 192 310 198 340L216 592H238L222 326C224 290 224 230 220 158Z" />
+                </g>
+
+                <!-- stand collar: band with a wide neck opening -->
+                <path class="part part-accent" data-role="accent" fill="url(#grad-accent)" fill-rule="evenodd" d="M136 50C136 40 146 36 160 36C174 36 184 40 184 50L186 84C186 92 176 98 160 98C144 98 134 92 134 84L136 50ZM148 52C148 48 152 46 160 46C168 46 172 48 172 52L172 76C172 80 168 82 160 82C152 82 148 80 148 76Z" />
+
+                <!-- belt + buckle -->
+                <g>
+                  <rect class="part part-accent" data-role="accent" x="118" y="256" width="84" height="15" rx="2" fill="url(#grad-accent)" />
+                  <rect class="part part-metal" data-role="metal" x="154" y="258.5" width="12" height="10" rx="1.4" fill="url(#grad-metal)" />
+                </g>
+
+                <!-- trim: pocket welts + hems -->
+                <g class="part part-trim" data-role="trim" fill="currentColor" stroke="currentColor" stroke-linecap="round">
+                  <rect x="128" y="208" width="22" height="4.5" rx="1" stroke="none" />
+                  <rect x="170" y="208" width="22" height="4.5" rx="1" stroke="none" />
+                  <path d="M90 614H132M188 614H230" fill="none" stroke-width="2" />
+                </g>
+
+                <!-- construction stitches -->
+                <g fill="none" stroke="#fff" stroke-opacity="0.16" stroke-width="0.7" stroke-dasharray="2 3">
+                  <path d="M128 112C130 170 132 220 134 250" />
+                  <path d="M192 112C190 170 188 220 186 250" />
+                  <path d="M130 280L112 610" />
+                  <path d="M190 280L208 610" />
+                </g>
+
+                <!-- zipper from the neckline down to the belt -->
+                <g class="part part-metal" data-role="metal">
+                  <path d="M160 98V256" fill="none" stroke="url(#grad-metal)" stroke-width="2" />
+                  <rect x="156.2" y="96" width="7.6" height="9" rx="1.3" fill="url(#grad-metal)" />
+                  <path d="M160 105L165.5 111V116L160 113.5Z" fill="url(#grad-metal)" />
+                </g>
+
+                <!-- crisp outlines -->
+                <path fill="none" stroke="#000" stroke-opacity="0.5" stroke-width="1.05" d="M140 80C118 74 100 86 88 102C80 116 86 130 114 156L118 250C116 272 108 298 102 320L86 592C84 608 96 618 114 618H138C150 618 154 606 152 592L160 338H160L168 592C166 606 170 618 182 618H206C224 618 236 608 234 592L218 320C212 298 204 272 202 250L206 156C234 130 240 116 232 102C220 86 202 74 180 80C170 90 150 90 140 80Z" />
+                <path fill="none" stroke="#000" stroke-opacity="0.35" stroke-width="0.8" d="M136 50C136 40 146 36 160 36C174 36 184 40 184 50L186 84C186 92 176 98 160 98C144 98 134 92 134 84L136 50Z" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <aside class="panel panel-palette">
+        <div class="panel-head">
+          <h2 id="palette-title">Palette</h2>
+          <button type="button" class="btn-text" id="btn-rename" title="Edit palette name">Rename</button>
+        </div>
+        <p class="palette-name" id="palette-name" contenteditable="true" spellcheck="false" role="textbox" aria-label="Palette name"></p>
+        <ul class="swatches" id="swatches"></ul>
+        <div class="palette-actions">
+          <button type="button" class="btn btn-ghost" id="btn-copy-all">Copy all hex</button>
+          <button type="button" class="btn btn-gold" id="btn-export">Export PNG</button>
+        </div>
+        <p class="palette-shop"><a href="https://payhip.com/b/kPBD1">Get this palette for Procreate/Adobe — $4</a></p>
+
+        <section class="pro-card" id="pro" aria-labelledby="pro-title">
+          <div class="pro-badge-row">
+            <h2 id="pro-title">Colorways Pro</h2>
+            <span class="badge">Coming soon</span>
+          </div>
+          <p>Paid extras, planned for later. The free generator stays free. Payment is not connected in this prototype.</p>
+          <div class="pro-features">
+            <article class="pro-feature" aria-disabled="true">
+              <div class="pro-feature-copy">
+                <h3>Batch export</h3>
+                <p>Download every theme as a PNG board in one pass — lookbook-ready.</p>
+              </div>
+              <button type="button" class="btn btn-pro" data-pro-feature="batch" aria-describedby="pro-title">Unlock in Pro</button>
+            </article>
+            <article class="pro-feature" aria-disabled="true">
+              <div class="pro-feature-copy">
+                <h3>Pattern swatches</h3>
+                <p>Drop adire-inspired resists and kente-inspired bands into a board. Color language only, not specific cloths.</p>
+              </div>
+              <button type="button" class="btn btn-pro" data-pro-feature="patterns" aria-describedby="pro-title">Unlock in Pro</button>
+            </article>
+          </div>
+          <div class="pattern-preview" aria-hidden="true">
+            <figure class="pattern-tile locked">
+              <svg viewBox="0 0 120 80" class="pat pat-adire"><rect width="120" height="80" fill="#1a2870"/><g fill="#e8d9b8" opacity="0.85"><circle cx="20" cy="20" r="3"/><circle cx="50" cy="18" r="2.2"/><circle cx="80" cy="22" r="3"/><circle cx="110" cy="16" r="2"/><circle cx="35" cy="44" r="2.4"/><circle cx="68" cy="48" r="3"/><circle cx="98" cy="42" r="2"/><circle cx="18" cy="62" r="2.6"/><circle cx="54" cy="66" r="2"/><circle cx="88" cy="64" r="3"/><path d="M8 36c10-8 18-2 22 6 6-10 16-12 24-2" fill="none" stroke="#e8d9b8" stroke-width="1.2"/></g></svg>
+              <figcaption>Adire resist</figcaption>
+            </figure>
+            <figure class="pattern-tile locked">
+              <svg viewBox="0 0 120 80" class="pat pat-kente"><rect width="120" height="80" fill="#0c0c0e"/><rect y="0" width="120" height="10" fill="#c9a227"/><rect y="14" width="120" height="6" fill="#7a1f1a"/><rect y="24" width="120" height="14" fill="#1d4a28"/><rect y="42" width="120" height="6" fill="#c9a227"/><rect y="52" width="120" height="10" fill="#7a1f1a"/><rect y="66" width="120" height="14" fill="#1d4a28"/><g fill="none" stroke="#0c0c0e" stroke-width="3"><path d="M20 0v80M40 0v80M70 0v80M100 0v80"/></g></svg>
+              <figcaption>Kente bands</figcaption>
+            </figure>
+            <figure class="pattern-tile locked">
+              <svg viewBox="0 0 120 80" class="pat pat-chrome"><rect width="120" height="80" fill="#1a1c22"/><g stroke="#c5c8d0" stroke-width="0.6" opacity="0.55" fill="none"><path d="M0 20h120M0 40h120M0 60h120M20 0v80M40 0v80M60 0v80M80 0v80M100 0v80"/></g><circle cx="60" cy="40" r="14" fill="none" stroke="#e8eaed" stroke-width="1"/></svg>
+              <figcaption>Chrome grid</figcaption>
+            </figure>
+            <figure class="pattern-tile locked">
+              <svg viewBox="0 0 120 80" class="pat pat-gold"><rect width="120" height="80" fill="#0a0a0c"/><g fill="#d4a017"><circle cx="16" cy="18" r="0.9" opacity=".9"/><circle cx="44" cy="12" r="0.6" opacity=".6"/><circle cx="72" cy="22" r="1" opacity=".8"/><circle cx="98" cy="14" r="0.7"/><circle cx="28" cy="40" r="0.8"/><circle cx="60" cy="36" r="0.5"/><circle cx="88" cy="44" r="1"/><circle cx="14" cy="62" r="0.7"/><circle cx="50" cy="66" r="0.9"/><circle cx="78" cy="58" r="0.5"/><circle cx="108" cy="68" r="0.8"/></g><rect x="8" y="8" width="104" height="64" fill="none" stroke="#d4a017" stroke-opacity=".45"/></svg>
+              <figcaption>Gold dust</figcaption>
+            </figure>
+          </div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="how" id="how" aria-labelledby="how-title">
+      <h2 id="how-title">How it works</h2>
+      <ol class="how-grid">
+        <li>
+          <span class="how-num">01</span>
+          <h3>Pick a theme</h3>
+          <p>Start from night and gold, indigo fields, cold chrome, or a kente- or adire-inspired combination. These are working systems, not costumes.</p>
+        </li>
+        <li>
+          <span class="how-num">02</span>
+          <h3>Lock and regenerate</h3>
+          <p>Each role — ground, field, accent, metal, trim — can be locked. Generate again to shuffle only what is still open.</p>
+        </li>
+        <li>
+          <span class="how-num">03</span>
+          <h3>Read it on a body</h3>
+          <p>The one-piece updates live so you can judge proportion and shine the way you would on a real silhouette, not a flat chip.</p>
+        </li>
+        <li>
+          <span class="how-num">04</span>
+          <h3>Take the codes</h3>
+          <p>Copy a single hex, copy the whole list, or export a PNG board for a lookbook, a tech pack, or a mood board.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <strong>Neon Sankofa</strong>
+      <span>Afrofuturist fashion, styled for real life.</span>
+    </div>
+    <p class="footer-note">Kente- and adire-inspired palettes borrow color language, not specific cloths or sacred motifs. This tool is a free prototype. Pro features are placeholders and do not process payment. The <a href="https://payhip.com/b/f921T">Afrofuturism Art Prints, Wallpapers &amp; Color Palettes — Neon Sankofa Vol. 1 ($18)</a> pack adds print-ready looks, wallpapers, and palette files. A standalone <a href="https://payhip.com/b/kPBD1">Procreate/Adobe palette is $4</a>.</p>
+    <p class="footer-links">
+      <a href="https://virgoego90.github.io/blog/">Neon Sankofa Journal</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="https://virgoego90.github.io/patterns/">Pattern Lab</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="https://virgoego90.github.io/names/">Look Namer</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="https://virgoego90.github.io/free/">Free wallpapers</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="https://payhip.com/b/kPBD1">Get this palette for Procreate/Adobe — $4</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="https://payhip.com/b/f921T">Afrofuturism Art Prints pack ($18)</a>
+      <span class="dot" aria-hidden="true">·</span>
+      <span>Colorways stays free at its core.</span>
+    </p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <dialog class="modal" id="pro-modal" aria-labelledby="pro-modal-title">
+    <div class="modal-inner">
+      <h2 id="pro-modal-title">Colorways Pro is not for sale yet</h2>
+      <p id="pro-modal-body">This is a placeholder for a future paid extra. No payment is collected here, and nothing is unlocked. The free generator — palettes, locks, live one-piece preview, hex copy, and single PNG export — stays free.</p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-gold" id="pro-modal-close" autofocus>Got it</button>
+        <button type="button" class="btn btn-ghost" id="pro-modal-pay" disabled>Continue to payment (not wired)</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>

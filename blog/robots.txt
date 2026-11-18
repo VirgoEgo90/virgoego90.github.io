@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /screenshots/
+
+Sitemap: https://virgoego90.github.io/blog/sitemap.xml

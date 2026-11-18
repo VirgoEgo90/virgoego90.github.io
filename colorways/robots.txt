@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://virgoego90.github.io/colorways/sitemap.xml

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Neon Sankofa">
+  <rect width="64" height="64" rx="8" fill="#08080c"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="7" fill="none" stroke="#d4b056" stroke-width="1.25"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="700" fill="#f4efe4">N</text>
+  <rect x="18" y="50" width="28" height="2" rx="1" fill="#d4b056"/>
+</svg>

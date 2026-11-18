@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ID Collectives — Neon Sankofa tools and digital products</title>
+  <meta name="description" content="ID Collectives is Ivan Dummett's studio shop: free Neon Sankofa tools for Afrofuturist color, pattern, and naming, plus digital planners, printables, and art packs.">
+  <link rel="canonical" href="https://virgoego90.github.io/">
+  <meta property="og:title" content="ID Collectives — Neon Sankofa tools and digital products">
+  <meta property="og:description" content="Free Afrofuturist fashion tools and a shop of digital packs, planners, and printables.">
+  <meta property="og:url" content="https://virgoego90.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ID Collectives">
+  <meta name="theme-color" content="#070709">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Sora:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --night: #070709;
+      --ink: #101014;
+      --line: #2a2a33;
+      --gold: #e8c547;
+      --paper: #efe8d8;
+      --mute: #9a9486;
+      --indigo: #3c4ea0;
+      --chrome: #c9d0d8;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(1200px 600px at 10% -10%, #16161e 0%, var(--night) 55%);
+      color: var(--paper);
+      font: 16px/1.55 Sora, system-ui, sans-serif;
+      min-height: 100vh;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    header.top {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 0 8px; gap: 16px; flex-wrap: wrap;
+    }
+    .wordmark { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .wordmark .studio { font-family: Syne, sans-serif; font-weight: 800; letter-spacing: .02em; font-size: 1.15rem; }
+    .wordmark .by { color: var(--mute); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+    header nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: .92rem; }
+    header nav a { color: var(--paper); }
+    .hero { padding: 56px 0 36px; }
+    .eyebrow { font-family: "IBM Plex Mono", monospace; color: var(--gold); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 14px; }
+    h1 { font-family: Syne, sans-serif; font-weight: 800; font-size: clamp(2.1rem, 5vw, 3.6rem); line-height: 1.05; margin: 0 0 16px; max-width: 16ch; }
+    .lede { max-width: 58ch; color: #d9d2c3; font-weight: 300; font-size: 1.08rem; margin: 0; }
+    .swatches { display: flex; gap: 8px; margin-top: 28px; align-items: center; color: var(--mute); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
+    .swatches i { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+    .swatches i.n { background: #111114; border: 1px solid #3a3a44; }
+    .swatches i.g { background: var(--gold); }
+    .swatches i.in { background: var(--indigo); }
+    .swatches i.c { background: var(--chrome); }
+    h2 { font-family: Syne, sans-serif; font-size: 1.5rem; margin: 48px 0 16px; }
+    .tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+    .tool {
+      background: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+      color: inherit;
+      display: flex; flex-direction: column; gap: 8px;
+      min-height: 150px;
+      transition: border-color .15s ease, transform .15s ease;
+    }
+    .tool:hover { border-color: var(--gold); text-decoration: none; transform: translateY(-2px); }
+    .tool b { font-family: Syne, sans-serif; font-size: 1.1rem; }
+    .tool span { color: var(--mute); font-size: .88rem; }
+    .tool em { margin-top: auto; font-style: normal; color: var(--gold); font-size: .82rem; }
+    .shop-groups { display: flex; flex-direction: column; gap: 28px; }
+    .group-label { color: var(--mute); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 10px; }
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+    .product {
+      background: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 16px 14px;
+      color: inherit;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .product:hover { border-color: #5a5338; text-decoration: none; }
+    .product h3 { font-family: Syne, sans-serif; font-size: 1rem; margin: 0; line-height: 1.3; }
+    .product p { margin: 0; color: var(--mute); font-size: .85rem; flex: 1; }
+    .price { font-family: "IBM Plex Mono", monospace; color: var(--gold); font-size: .95rem; }
+    footer { border-top: 1px solid var(--line); margin-top: 64px; padding: 28px 0 40px; color: var(--mute); font-size: .88rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--paper); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="wordmark" href="./">
+        <span class="studio">ID Collectives</span>
+        <span class="by">A studio by Ivan Dummett</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="blog/">Journal</a>
+        <a href="colorways/">Colorways</a>
+        <a href="patterns/">Pattern Lab</a>
+        <a href="names/">Look Namer</a>
+        <a href="free/">Free wallpapers</a>
+        <a href="#shop">Shop</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">Free tools + digital packs</p>
+      <h1>Afrofuturist fashion tools, and a shop that funds them.</h1>
+      <p class="lede">ID Collectives is the studio behind Neon Sankofa: a journal, a set of free in-browser tools, and digital products you can download today. Nothing here needs a sign-up.</p>
+      <div class="swatches" aria-hidden="true"><i class="n"></i><i class="g"></i><i class="in"></i><i class="c"></i> Night · Gold · Indigo · Chrome</div>
+    </section>
+
+    <h2>Free tools</h2>
+    <div class="tools">
+      <a class="tool" href="blog/">
+        <b>Neon Sankofa journal</b>
+        <span>Style essays on silhouette, color, textile, jewelry, and footwear, written for real closets.</span>
+        <em>Read the journal →</em>
+      </a>
+      <a class="tool" href="colorways/">
+        <b>Colorways</b>
+        <span>Build an Afrofuturist outfit palette and recolor a one-piece live. Export the hex codes.</span>
+        <em>Open the generator →</em>
+      </a>
+      <a class="tool" href="patterns/">
+        <b>Pattern Lab</b>
+        <span>Make seamless tiles and phone or desktop wallpapers in the browser. No upload, no account.</span>
+        <em>Make a pattern →</em>
+      </a>
+      <a class="tool" href="names/">
+        <b>Look Namer</b>
+        <span>Name a collection, look, brand, or character, and leave with a styling brief and palette.</span>
+        <em>Generate names →</em>
+      </a>
+      <a class="tool" href="free/">
+        <b>Free wallpapers</b>
+        <span>A sampler of original Afrofuturist phone and desktop wallpapers. Instant download.</span>
+        <em>Download free →</em>
+      </a>
+    </div>
+
+    <h2 id="shop">Shop</h2>
+    <div class="shop-groups">
+      <section>
+        <p class="group-label">Neon Sankofa — Afrofuturism packs</p>
+        <div class="products">
+          <a class="product" href="https://payhip.com/b/f921T">
+            <h3>Afrofuturism Art Prints, Wallpapers &amp; Color Palettes — Neon Sankofa Vol. 1</h3>
+            <p>The complete pack: six illustrated one-piece looks as print-ready files, wallpapers, and the Night / Gold / Indigo / Chrome palette.</p>
+            <span class="price">$18</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/rMFQo">
+            <h3>Afrofuturism Wallpapers — Neon Sankofa Vol. 1</h3>
+            <p>Phone, 16:9, and 16:10 wallpapers from the six looks, plus a typography-free cover crop.</p>
+            <span class="price">$6</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/kPBD1">
+            <h3>Afrofuturism Color Palette — Neon Sankofa</h3>
+            <p>ASE, CSS, JSON, a hex list, a Procreate swatches file, and a printable swatch sheet.</p>
+            <span class="price">$4</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/TSvVc">
+            <h3>Afrofuturism Fashion Coloring Book — Neon Sankofa Vol. 1</h3>
+            <p>A printable coloring book of men's and women's one-piece looks from the Neon Sankofa studio.</p>
+            <span class="price">$9.99</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/P2Zoj">
+            <h3>Afrofuturism Wall Art Prints — Neon Sankofa Vol. 1</h3>
+            <p>High-resolution prints of the illustrated looks, prepared in several frame sizes.</p>
+            <span class="price">$7</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/91fyh">
+            <h3>Afrofuturism Seamless Patterns — Neon Sankofa Vol. 1</h3>
+            <p>Seamless pattern tiles drawn from the same palettes and motif language as Pattern Lab.</p>
+            <span class="price">$5</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/W4vw7">
+            <h3>Afrofuturism Motif Stamps — Neon Sankofa Vol. 1</h3>
+            <p>Transparent motif stamps for mockups, journaling, and digital collage.</p>
+            <span class="price">$4</span>
+          </a>
+        </div>
+      </section>
+      <section>
+        <p class="group-label">Planners, trackers, and printables</p>
+        <div class="products">
+          <a class="product" href="https://payhip.com/b/vSgBL">
+            <h3>Google Sheets Budget Template</h3>
+            <p>Monthly income, expenses, and a savings tracker in Google Sheets.</p>
+            <span class="price">$9.99</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/1UxmA">
+            <h3>ADHD Planner Printable for Adults</h3>
+            <p>Daily pages, a dopamine menu, and a cleaning planner made for print.</p>
+            <span class="price">$9.99</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/kp72R">
+            <h3>Wedding Planner Printable Binder 2027</h3>
+            <p>Checklist, budget tracker, and timeline pages for a 2027 wedding.</p>
+            <span class="price">$12.99</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/KRr57">
+            <h3>Large Print Word Search for Adults</h3>
+            <p>60 themed puzzles with answer keys, set in large print.</p>
+            <span class="price">$7.99</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/fAE4w">
+            <h3>Habit, Meal &amp; Fitness Tracker Pack</h3>
+            <p>A weekly meal planner, grocery list, and fitness log with habit trackers.</p>
+            <span class="price">$8.99</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/4YSOp">
+            <h3>Kids Chore Chart Printable</h3>
+            <p>Chore charts plus activity sheets and flashcards for home.</p>
+            <span class="price">$7.99</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/6smqb">
+            <h3>Digital Planner Stickers for GoodNotes</h3>
+            <p>Days, icons, labels, and washi tape PNGs for digital planners.</p>
+            <span class="price">$5.99</span>
+          </a>
+          <a class="product" href="https://payhip.com/b/YXLtk">
+            <h3>Botanical Wall Art Set of 3</h3>
+            <p>Vintage plant prints sized for a living room or bathroom wall.</p>
+            <span class="price">$8</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+  <footer>
+    <div class="wrap">
+      <p>© 2026 Ivan Dummett · ID Collectives. Payments are handled by Payhip.</p>
+      <p><a href="blog/privacy.html">Privacy</a> · <a href="blog/affiliate-disclosure.html">Affiliate disclosure</a> · <a href="blog/contact.html">Contact</a></p>
+    </div>
+  </footer>
+</body>
+</html>
