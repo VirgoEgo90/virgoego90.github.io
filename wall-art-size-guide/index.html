@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Print Size &amp; DPI Calculator for Wall Art (Free)</title>
+  <meta name="description" content="Free print size and DPI calculator for printable wall art. Check whether an image will print clearly at 8×10, 11×14, 16×20, and other frame sizes.">
+  <link rel="canonical" href="https://virgoego90.github.io/wall-art-size-guide/">
+  <meta property="og:title" content="Print Size &amp; DPI Calculator for Wall Art (Free)">
+  <meta property="og:description" content="Free print size and DPI calculator for printable wall art. Check whether an image will print clearly at 8×10, 11×14, 16×20, and other frame sizes.">
+  <meta property="og:url" content="https://virgoego90.github.io/wall-art-size-guide/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ID Collectives">
+  <meta name="theme-color" content="#070709">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:wght@600;700&family=Sora:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/tools.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="narrow">
+    <header class="top">
+      <a class="wordmark" href="/">
+        <span class="studio">ID Collectives</span>
+        <span class="by">A studio by Ivan Dummett</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/freebies/">Freebies</a>
+        <a href="/#planning-tools">Tools</a>
+        <a href="/#shop">Shop</a>
+        <a href="/blog/">Journal</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">Free print size calculator</p>
+      <h1>Print size &amp; DPI guide for wall art</h1>
+      <p class="lede">Enter an image’s pixel size, or open a file on this device, and check how sharp it will print at common frame sizes. Useful before you send a file to a print shop. The file stays in your browser.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="ps-form">
+      <h2 id="ps-form">Check a file</h2>
+      <div class="row two">
+        <div class="field">
+          <label for="pxW">Width (pixels)</label>
+          <input id="pxW" type="number" min="1" step="1" value="3600">
+        </div>
+        <div class="field">
+          <label for="pxH">Height (pixels)</label>
+          <input id="pxH" type="number" min="1" step="1" value="4500">
+        </div>
+      </div>
+      <div class="field" style="margin-top:12px">
+        <label for="file">Or open an image to read its size (optional)</label>
+        <input id="file" type="file" accept="image/*">
+      </div>
+      <p class="hint" id="fileNote"></p>
+      <div class="row two" style="margin-top:14px">
+        <div class="field">
+          <label for="inW">Target print width (inches)</label>
+          <input id="inW" type="number" min="0.5" step="0.1" value="8">
+        </div>
+        <div class="field">
+          <label for="inH">Target print height (inches)</label>
+          <input id="inH" type="number" min="0.5" step="0.1" value="10">
+        </div>
+      </div>
+      <p class="hint">Common sizes:
+        <span class="chip-row" id="sizes" style="display:inline-flex;margin-left:6px;vertical-align:middle"></span>
+      </p>
+      <div class="stat-grid" style="margin-top:16px">
+        <div class="stat">
+          <div class="k">Print DPI</div>
+          <div class="v" id="dpiOut">—</div>
+          <div class="s" id="dpiNote"></div>
+        </div>
+        <div class="stat">
+          <div class="k">Quality at this size</div>
+          <div class="v" id="quality">—</div>
+          <div class="s" id="qualityNote"></div>
+        </div>
+        <div class="stat">
+          <div class="k">Aspect ratio</div>
+          <div class="v" id="ratio">—</div>
+          <div class="s" id="ratioNote"></div>
+        </div>
+      </div>
+      <p class="note">DPI is pixels divided by inches on each side. If the two sides differ, this page reports the lower figure, which is the limiting one. 300 DPI is the usual target for art viewed up close. 150–200 DPI can look fine on a larger poster seen from a few feet away. These are rules of thumb, not a guarantee from any particular printer.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Common frame sizes for this image</h2>
+      <p class="hint">Figures use the image size you entered. “Crop?” notes when the frame’s shape does not match the image, so a print shop would need to trim a little or add a border.</p>
+      <div style="overflow-x:auto">
+        <table class="plain" id="table">
+          <thead>
+            <tr><th>Size</th><th>Inches</th><th>Pixels needed at 300 DPI</th><th>Your DPI</th><th>Quality</th><th>Crop?</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="howto">
+      <h2>How to use a print size and DPI calculator</h2>
+      <ol>
+        <li>Find your image’s pixel width and height. In most photo apps this is under File → Properties, or you can open the file here. The file is not uploaded.</li>
+        <li>Choose a print size, or tap a common frame size. The calculator shows the resulting DPI and whether the shapes match.</li>
+        <li>If a size needs a crop, compare the aspect ratios. An 8×10 (4:5) and a 16×20 (also 4:5) share a shape; an 8×10 and an 11×14 do not.</li>
+        <li>When you buy a print pack, look for files already prepared at 300 DPI in the sizes you want, so you do not have to resize them yourself.</li>
+      </ol>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>Print-ready wall art, already sized</h2>
+        <p>The botanical set has three vintage plant prints in several frame sizes at 300 DPI. The Afrofuturism wall art pack prepares the Neon Sankofa looks in five frame sizes. A free 8×10 lavender sample is on the freebies page.</p>
+        <span class="price">$8 botanical set · $7 Afrofuturism prints</span>
+      </div>
+      <div class="actions" style="margin:0">
+        <a class="btn primary" href="https://payhip.com/b/YXLtk">Get the botanical set</a>
+        <a class="btn ghost" href="https://payhip.com/b/P2Zoj">Get the Afrofuturism prints</a>
+      </div>
+    </section>
+<script>
+(function () {
+  const SIZES = [
+    ["5 × 7", 5, 7],
+    ["8 × 10", 8, 10],
+    ["8.5 × 11 (Letter)", 8.5, 11],
+    ["11 × 14", 11, 14],
+    ["11 × 17", 11, 17],
+    ["12 × 16", 12, 16],
+    ["16 × 20", 16, 20],
+    ["16 × 24", 16, 24],
+    ["18 × 24", 18, 24],
+    ["24 × 36", 24, 36],
+    ["A4", 8.27, 11.69],
+    ["A3", 11.69, 16.54],
+    ["A2", 16.54, 23.39]
+  ];
+  const pxW = document.getElementById("pxW");
+  const pxH = document.getElementById("pxH");
+  const inW = document.getElementById("inW");
+  const inH = document.getElementById("inH");
+  const fileNote = document.getElementById("fileNote");
+
+  function n(el) { const v = parseFloat(el.value); return Number.isFinite(v) && v > 0 ? v : 0; }
+  function gcd(a, b) { a = Math.round(a); b = Math.round(b); return b ? gcd(b, a % b) : Math.abs(a); }
+  function ratio(w, h) {
+    const g = gcd(w, h) || 1;
+    const a = Math.round(w / g), b = Math.round(h / g);
+    if (a < 20 && b < 20) return a + ":" + b;
+    // simplify to one decimal
+    const r = (w / h).toFixed(2).replace(/0+$/,"").replace(/\.$/,"");
+    return r + ":1";
+  }
+  function grade(dpi) {
+    if (dpi >= 300) return ["Excellent", "ok", "300 DPI or more — a usual target for art viewed up close."];
+    if (dpi >= 240) return ["Very good", "ok", "Sharp for most wall art, especially if it is not viewed from inches away."];
+    if (dpi >= 200) return ["Good", "ok", "Fine for mid-size prints and posters."];
+    if (dpi >= 150) return ["Fair at a distance", "warn", "Often acceptable on a larger poster viewed from a few feet away, not ideal up close."];
+    if (dpi >= 100) return ["Soft", "warn", "Likely to look soft up close. A smaller print size would raise the DPI."];
+    return ["Low", "bad", "Below 100 DPI this size will usually look pixelated. Use a smaller print or a larger file."];
+  }
+  function cropNeeded(iw, ih, fw, fh) {
+    const image = iw / ih, frame = fw / fh;
+    const diff = Math.abs(image - frame) / frame;
+    if (diff < 0.02) return "Same shape";
+    return image > frame ? "Yes — trim the sides" : "Yes — trim the top or bottom";
+  }
+  function render() {
+    const w = n(pxW), h = n(pxH), tw = n(inW), th = n(inH);
+    if (!w || !h || !tw || !th) return;
+    const dpiW = w / tw, dpiH = h / th;
+    const dpi = Math.min(dpiW, dpiH);
+    const [label, cls, note] = grade(dpi);
+    document.getElementById("dpiOut").textContent = Math.round(dpi);
+    document.getElementById("dpiNote").textContent = "Width " + Math.round(dpiW) + " · height " + Math.round(dpiH);
+    document.getElementById("quality").innerHTML = '<span class="badge ' + cls + '">' + label + "</span>";
+    document.getElementById("qualityNote").textContent = note;
+    document.getElementById("ratio").textContent = ratio(w, h);
+    document.getElementById("ratioNote").textContent = "Frame is " + ratio(tw, th) + ". " + cropNeeded(w, h, tw, th) + ".";
+    const tb = document.querySelector("#table tbody");
+    tb.innerHTML = SIZES.map(([name, fw, fh]) => {
+      const needW = Math.round(fw * 300), needH = Math.round(fh * 300);
+      const d = Math.min(w / fw, h / fh);
+      const [lab, c] = grade(d);
+      return `<tr><td>${name}</td><td>${fw} × ${fh}</td><td>${needW.toLocaleString()} × ${needH.toLocaleString()}</td><td>${Math.round(d)}</td><td><span class="badge ${c}">${lab}</span></td><td>${cropNeeded(w, h, fw, fh)}</td></tr>`;
+    }).join("");
+  }
+  const sizes = document.getElementById("sizes");
+  [["8×10",8,10],["11×14",11,14],["16×20",16,20],["18×24",18,24],["A3",11.69,16.54]].forEach(([lab,w,h]) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.textContent = lab;
+    b.addEventListener("click", () => { inW.value = w; inH.value = h; render(); });
+    sizes.appendChild(b);
+  });
+  [pxW, pxH, inW, inH].forEach((el) => el.addEventListener("input", render));
+  document.getElementById("file").addEventListener("change", (e) => {
+    const f = e.target.files && e.target.files[0];
+    if (!f) return;
+    const url = URL.createObjectURL(f);
+    const img = new Image();
+    img.onload = () => {
+      pxW.value = img.naturalWidth;
+      pxH.value = img.naturalHeight;
+      fileNote.textContent = f.name + " is " + img.naturalWidth + " × " + img.naturalHeight + " pixels. The file was read on this device only.";
+      URL.revokeObjectURL(url);
+      render();
+    };
+    img.onerror = () => { fileNote.textContent = "That file could not be read as an image."; URL.revokeObjectURL(url); };
+    img.src = url;
+  });
+  render();
+})();
+</script>
+
+  </div>
+  <footer class="site">
+    <div class="narrow">
+      <p>© 2026 Ivan Dummett · ID Collectives. Payments are handled by Payhip.</p>
+      <p><a href="/blog/privacy.html">Privacy</a> · <a href="/blog/affiliate-disclosure.html">Affiliate disclosure</a> · <a href="/blog/contact.html">Contact</a></p>
+    </div>
+  </footer>
+</body>
+</html>

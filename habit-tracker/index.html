@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Printable Habit Tracker Generator — Free Monthly Grid</title>
+  <meta name="description" content="Free printable habit tracker. Pick a month, type your habits, and print a dated monthly grid. No sign-up, nothing uploaded.">
+  <link rel="canonical" href="https://virgoego90.github.io/habit-tracker/">
+  <meta property="og:title" content="Printable Habit Tracker Generator — Free Monthly Grid">
+  <meta property="og:description" content="Free printable habit tracker. Pick a month, type your habits, and print a dated monthly grid. No sign-up, nothing uploaded.">
+  <meta property="og:url" content="https://virgoego90.github.io/habit-tracker/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ID Collectives">
+  <meta name="theme-color" content="#070709">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:wght@600;700&family=Sora:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/tools.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="narrow">
+    <header class="top">
+      <a class="wordmark" href="/">
+        <span class="studio">ID Collectives</span>
+        <span class="by">A studio by Ivan Dummett</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/freebies/">Freebies</a>
+        <a href="/#planning-tools">Tools</a>
+        <a href="/#shop">Shop</a>
+        <a href="/blog/">Journal</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">Free printable habit tracker</p>
+      <h1>Monthly habit tracker generator</h1>
+      <p class="lede">Pick a month, type the habits you want to tick off, and print a dated grid with a box for every day. The sheet is made in your browser. Nothing is uploaded.</p>
+    </section>
+
+    <section class="panel no-print" aria-labelledby="ht-form">
+      <h2 id="ht-form">Build your tracker</h2>
+      <div class="row two">
+        <div class="field">
+          <label for="month">Month</label>
+          <input id="month" type="month">
+        </div>
+        <div class="field">
+          <label for="title">Title (optional)</label>
+          <input id="title" type="text" placeholder="November habits" maxlength="60">
+        </div>
+      </div>
+      <div class="field" style="margin-top:12px">
+        <label for="habits">Habits (one per line, up to 12)</label>
+        <textarea id="habits" style="min-height:160px">Drink water
+Walk 20 minutes
+Read 10 pages
+Lights out by 11
+No phone at breakfast</textarea>
+      </div>
+      <div class="chip-row" style="margin-top:12px" id="presets">
+        <button type="button" class="chip" data-habits="Drink water\nWalk 20 minutes\nRead 10 pages\nLights out by 11\nNo phone at breakfast">Starter</button>
+        <button type="button" class="chip" data-habits="Morning stretch\nCook at home\nCooked lunch packed\nEvening walk\nStretch before bed">Movement</button>
+        <button type="button" class="chip" data-habits="Inbox to zero-ish\nOne deep-work block\nTomorrow’s three written\nDesk cleared">Focus</button>
+      </div>
+      <div class="actions">
+        <button type="button" class="primary" id="printBtn">Print tracker</button>
+      </div>
+      <p class="hint">Three to five habits is plenty to start with. A short list also keeps the boxes large enough to tick.</p>
+    </section>
+
+    <section class="panel">
+      <div class="sheet" id="sheet">
+        <p class="print-only" style="margin:0 0 4px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5c574f">ID Collectives · Printable habit tracker</p>
+        <h2 id="outTitle" style="margin:0 0 6px;text-align:center">Habit tracker</h2>
+        <p id="outSub" style="text-align:center;margin:0 0 14px;color:#5c574f;font-size:13px"></p>
+        <div class="sheet-scroll"><table class="check-grid habit-grid" id="grid"></table></div>
+        <p style="margin:14px 0 0;font-size:12px;color:#5c574f">Mark a box when you do the habit. The “Total” column is for a month-end count if you want one. This sheet is a tracker, not advice about health, sleep, or productivity.</p>
+      </div>
+    </section>
+
+    <section class="howto">
+      <h2>How to use a monthly habit tracker</h2>
+      <ol>
+        <li>Choose the month and year. The grid gets the right number of days, with a weekday letter above each date.</li>
+        <li>Type the habits you actually want to tick, in short, specific lines: “Read 10 pages” is easier to mark than “Read more.”</li>
+        <li>Print the sheet, or choose “Save as PDF” in the print dialog. Landscape often fits a full month more comfortably if your printer allows it.</li>
+        <li>Keep the page where you will see it at the moment the habit happens — on a fridge, by the bed, or next to a desk.</li>
+      </ol>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>Want more than a blank month?</h2>
+        <p>The habit, meal, and fitness tracker pack has weekly meal plans, a grocery list, and fitness logs alongside habit grids. The ADHD planner for adults adds daily pages, a dopamine menu, and a 31-day tracker. Both are organizational printables, not medical or fitness advice.</p>
+        <span class="price">$8.99 trackers · $9.99 ADHD planner</span>
+      </div>
+      <div class="actions" style="margin:0">
+        <a class="btn primary" href="https://payhip.com/b/fAE4w">Get the tracker pack</a>
+        <a class="btn ghost" href="https://payhip.com/b/1UxmA">Get the ADHD planner</a>
+      </div>
+    </section>
+<script>
+(function () {
+  const monthEl = document.getElementById("month");
+  const titleEl = document.getElementById("title");
+  const habitsEl = document.getElementById("habits");
+  const WD = ["S","M","T","W","T","F","S"];
+
+  function daysInMonth(y, m) { return new Date(y, m, 0).getDate(); } // m is 1-12 when used as Date(y, m, 0)
+
+  function parseHabits() {
+    return habitsEl.value.split(/\n+/).map((s) => s.trim()).filter(Boolean).slice(0, 12);
+  }
+
+  function render() {
+    const val = monthEl.value;
+    if (!val) return;
+    const [y, m] = val.split("-").map(Number);
+    const days = new Date(y, m, 0).getDate();
+    const habits = parseHabits();
+    const label = new Date(y, m - 1, 1).toLocaleDateString(undefined, { month: "long", year: "numeric" });
+    document.getElementById("outTitle").textContent = titleEl.value.trim() || (label + " habit tracker");
+    document.getElementById("outSub").textContent = label + " · " + habits.length + " habit" + (habits.length === 1 ? "" : "s");
+    const table = document.getElementById("grid");
+    let html = "<thead><tr><th class='habit'>Habit</th>";
+    for (let d = 1; d <= days; d++) {
+      const dt = new Date(y, m - 1, d);
+      const weekend = dt.getDay() === 0 || dt.getDay() === 6;
+      html += `<th style="${weekend ? "background:#efe6d4" : ""}">${WD[dt.getDay()]}<br>${d}</th>`;
+    }
+    html += "<th class='total'>Tot</th></tr></thead><tbody>";
+    (habits.length ? habits : [" "]).forEach((h) => {
+      html += `<tr><td class="habit">${escapeHtml(h)}</td>`;
+      for (let d = 1; d <= days; d++) html += "<td></td>";
+      html += "<td class='total'></td></tr>";
+    });
+    html += "</tbody>";
+    table.innerHTML = html;
+  }
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
+  }
+  const now = new Date();
+  monthEl.value = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0");
+  [monthEl, titleEl, habitsEl].forEach((el) => el.addEventListener("input", render));
+  document.getElementById("presets").addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-habits]");
+    if (!btn) return;
+    habitsEl.value = btn.dataset.habits.replace(/\\n/g, "\n");
+    render();
+  });
+  document.getElementById("printBtn").addEventListener("click", () => window.print());
+  render();
+})();
+</script>
+
+  </div>
+  <footer class="site">
+    <div class="narrow">
+      <p>© 2026 Ivan Dummett · ID Collectives. Payments are handled by Payhip.</p>
+      <p><a href="/blog/privacy.html">Privacy</a> · <a href="/blog/affiliate-disclosure.html">Affiliate disclosure</a> · <a href="/blog/contact.html">Contact</a></p>
+    </div>
+  </footer>
+</body>
+</html>

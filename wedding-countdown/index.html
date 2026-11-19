@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wedding Countdown & Planning Timeline Generator (Free)</title>
+  <meta name="description" content="Free wedding countdown clock and a month-by-month planning checklist generated from your wedding date. Print the timeline. No sign-up.">
+  <link rel="canonical" href="https://virgoego90.github.io/wedding-countdown/">
+  <meta property="og:title" content="Wedding Countdown & Planning Timeline Generator (Free)">
+  <meta property="og:description" content="Free wedding countdown clock and a month-by-month planning checklist generated from your wedding date. Print the timeline. No sign-up.">
+  <meta property="og:url" content="https://virgoego90.github.io/wedding-countdown/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ID Collectives">
+  <meta name="theme-color" content="#070709">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:wght@600;700&family=Sora:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/tools.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+  <div class="narrow">
+    <header class="top">
+      <a class="wordmark" href="/">
+        <span class="studio">ID Collectives</span>
+        <span class="by">A studio by Ivan Dummett</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/freebies/">Freebies</a>
+        <a href="/#planning-tools">Tools</a>
+        <a href="/#shop">Shop</a>
+        <a href="/blog/">Journal</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">Free wedding countdown</p>
+      <h1>Wedding countdown &amp; planning timeline</h1>
+      <p class="lede">Enter your wedding date for a live countdown and a month-by-month checklist counted back from that day. Print the timeline, or use it as a starting list. Nothing is uploaded.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="cd-heading">
+      <h2 id="cd-heading">Your date</h2>
+      <div class="row two">
+        <div class="field">
+          <label for="wdate">Wedding date</label>
+          <input id="wdate" type="date">
+        </div>
+        <div class="field">
+          <label for="wnames">Names or short title (optional)</label>
+          <input id="wnames" type="text" placeholder="Alex &amp; Jordan" maxlength="80">
+        </div>
+      </div>
+      <p class="hint" id="dateNote">Pick a date to start the countdown.</p>
+      <div class="countdown" style="margin-top:16px" id="clock" hidden>
+        <div class="stat"><div class="k">Months</div><div class="v" id="mMonths">0</div></div>
+        <div class="stat"><div class="k">Days</div><div class="v" id="mDays">0</div></div>
+        <div class="stat"><div class="k">Hours</div><div class="v" id="mHours">0</div></div>
+        <div class="stat"><div class="k">Minutes</div><div class="v" id="mMins">0</div></div>
+      </div>
+      <p class="hint" id="exact" style="margin-top:10px"></p>
+      <div class="actions no-print">
+        <button type="button" class="primary" id="printBtn">Print timeline</button>
+      </div>
+    </section>
+
+    <section class="panel" id="timelinePanel" hidden>
+      <h2 id="tlTitle">Planning timeline</h2>
+      <p class="hint" id="tlIntro"></p>
+      <ol class="timeline" id="timeline"></ol>
+      <p class="note">This is a list of things many couples like to keep track of as a date gets closer. It is not a required sequence, and it is not advice about how you should celebrate. Local license rules, venue contracts, and vendor lead times vary — confirm those with the people you hire and with your local office.</p>
+    </section>
+
+    <section class="howto">
+      <h2>How to use a wedding countdown and timeline</h2>
+      <ol>
+        <li>Enter the wedding date. The countdown shows the months, days, hours, and minutes left, and updates while this page is open.</li>
+        <li>Read the checklist from the top. Items are grouped by how far out you are — twelve months, nine, six, and so on — and dated from your day.</li>
+        <li>Skip anything that does not apply. A backyard dinner and a ballroom wedding will not need the same vendors.</li>
+        <li>Print the page if you want a paper copy, or move the list into a binder. The printable 2027 wedding planner has calendar pages, a budget tracker, and a guest list if you want the rest in one place.</li>
+      </ol>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>Get the 2027 wedding planner binder</h2>
+        <p>A 36-page printable binder with a 2027 calendar, planning checklist, budget tracker, guest list, vendor pages, and a day-of schedule, plus an optional spreadsheet.</p>
+        <span class="price">$12.99 · instant download</span>
+      </div>
+      <a class="btn primary" href="https://payhip.com/b/kp72R">Get the wedding planner</a>
+    </section>
+<script>
+(function () {
+  const CHECKLIST = [
+    ["Twelve or more months before", 365, [
+      "Talk through a date range and a rough guest count",
+      "Set a working budget",
+      "Start a folder for notes, contracts, and inspiration",
+      "Book the ceremony and reception venues, if you are using them",
+      "Hold the date with the people you most want there",
+      "Look at photographers, celebrants or officiants, and catering"
+    ]],
+    ["Nine to twelve months before", 274, [
+      "Book photography and video, if you are using them",
+      "Book catering or a meal plan",
+      "Book music (band, DJ, or a playlist plan)",
+      "Book an officiant or confirm who will lead the ceremony",
+      "Start a guest-list draft",
+      "Think about attire and a first fitting date"
+    ]],
+    ["Six to nine months before", 183, [
+      "Book flowers or decide on a simple arrangement plan",
+      "Book hair and makeup trials, if you want them",
+      "Order or make invitations and a wedding website, if you are using one",
+      "Reserve hotel blocks or a lodging note for out-of-town guests",
+      "Register for gifts, or decide you will not",
+      "Plan the shape of the ceremony and the reception"
+    ]],
+    ["Four to six months before", 122, [
+      "Book a cake or dessert plan",
+      "Choose wedding-party attire and accessories",
+      "Book transport for the day, if you need it",
+      "Start a seating sketch once the guest list is steadier",
+      "Look at ceremony readings, music, or vows",
+      "Confirm rental items (chairs, linens, lighting, tableware)"
+    ]],
+    ["Two to four months before", 61, [
+      "Send invitations, if you have not already",
+      "Book a rehearsal time and a dinner, if you are having one",
+      "Have final attire fittings",
+      "Write vows or remarks, if you are doing them yourselves",
+      "Confirm menus and collect meal and allergy notes",
+      "Order rings, if that is still open, and check engraving time"
+    ]],
+    ["Four to eight weeks before", 28, [
+      "Track RSVPs on the guest list",
+      "Send a day-of schedule draft to vendors and the wedding party",
+      "Confirm final counts with catering and the venue",
+      "Finalize the seating plan",
+      "Collect marriage-license requirements for your location (this is a reminder only)",
+      "Put together welcome notes, favors, or gifts, if you are having them"
+    ]],
+    ["One to four weeks before", 7, [
+      "Pick up attire and press or steam it",
+      "Confirm final times, payments due, and arrival windows with every vendor",
+      "Print or share seating charts, ceremony programs, and menus, if you are using them",
+      "Pack an emergency kit (sewing, snacks, medication you already use, phone chargers)",
+      "Give a shot list or must-have moments to the photographer, if you have one",
+      "Confirm who holds rings, vows, licenses, and tips or final checks"
+    ]],
+    ["The week of, and the day before", 0, [
+      "Reconfirm weather plans and backup spaces",
+      "Charge devices and pack outfits, documents, and vendor payments",
+      "Share the final schedule and contacts with the wedding party",
+      "Eat, rest, and hand off anything that does not have to be yours that day"
+    ]]
+  ];
+
+  const dateEl = document.getElementById("wdate");
+  const namesEl = document.getElementById("wnames");
+  const clock = document.getElementById("clock");
+  const panel = document.getElementById("timelinePanel");
+  let timer = null;
+
+  function fmt(d) {
+    return d.toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+  }
+  function addDays(d, n) {
+    const x = new Date(d.getTime());
+    x.setDate(x.getDate() + n);
+    return x;
+  }
+  function targetDate() {
+    if (!dateEl.value) return null;
+    const p = dateEl.value.split("-").map(Number);
+    return new Date(p[0], p[1] - 1, p[2], 16, 0, 0); // 4pm local as a reasonable ceremony default
+  }
+  function tick() {
+    const target = targetDate();
+    if (!target) {
+      clock.hidden = true;
+      panel.hidden = true;
+      document.getElementById("dateNote").textContent = "Pick a date to start the countdown.";
+      document.getElementById("exact").textContent = "";
+      return;
+    }
+    const now = new Date();
+    const ms = target - now;
+    const names = namesEl.value.trim();
+    const who = names ? names + " — " : "";
+    if (ms <= 0) {
+      clock.hidden = false;
+      document.getElementById("mMonths").textContent = "0";
+      document.getElementById("mDays").textContent = "0";
+      document.getElementById("mHours").textContent = "0";
+      document.getElementById("mMins").textContent = "0";
+      document.getElementById("dateNote").textContent = who + "The date you entered is today or in the past.";
+      document.getElementById("exact").textContent = "Wedding date: " + fmt(target);
+    } else {
+      const totalDays = Math.floor(ms / 86400000);
+      const months = Math.floor(totalDays / 30.4375);
+      const days = Math.floor(ms / 86400000) % 1 === 0
+        ? Math.floor((ms % (86400000 * Math.max(1, Math.round(months * 30.4375) || 1))) / 86400000)
+        : 0;
+      // clearer breakdown: months (approx 30.44d) then leftover days, hours, minutes
+      const monthMs = 30.4375 * 86400000;
+      const m = Math.floor(ms / monthMs);
+      const rem = ms - m * monthMs;
+      const d = Math.floor(rem / 86400000);
+      const h = Math.floor((rem % 86400000) / 3600000);
+      const min = Math.floor((rem % 3600000) / 60000);
+      clock.hidden = false;
+      document.getElementById("mMonths").textContent = String(m);
+      document.getElementById("mDays").textContent = String(d);
+      document.getElementById("mHours").textContent = String(h);
+      document.getElementById("mMins").textContent = String(min);
+      const wholeDays = Math.ceil(ms / 86400000);
+      document.getElementById("dateNote").textContent = who + wholeDays + " day" + (wholeDays === 1 ? "" : "s") + " until " + fmt(target) + ".";
+      document.getElementById("exact").textContent = "Countdown uses 4:00 p.m. on that date in your local time. You can still use the checklist if the time of day is different.";
+    }
+    renderTimeline(target, names, now);
+  }
+  function renderTimeline(target, names, now) {
+    panel.hidden = false;
+    const title = names ? "Planning timeline for " + names : "Planning timeline";
+    document.getElementById("tlTitle").textContent = title;
+    document.getElementById("tlIntro").textContent = "Suggested windows counted back from " + fmt(new Date(target.getFullYear(), target.getMonth(), target.getDate())) + ".";
+    const root = document.getElementById("timeline");
+    root.innerHTML = "";
+    CHECKLIST.forEach(([label, daysBefore, items], i) => {
+      const next = CHECKLIST[i + 1];
+      const start = addDays(target, -daysBefore);
+      const end = next ? addDays(target, -next[1] - 1) : new Date(target);
+      const startS = start.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+      const endS = end.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+      const li = document.createElement("li");
+      const past = now > end;
+      const current = now >= start && now <= end;
+      li.innerHTML = `<h3>${label}</h3><p class="hint" style="margin:0 0 6px">${startS} – ${endS}${current ? " · this window" : past ? " · earlier window" : ""}</p><ul>${items.map((t) => "<li>" + t + "</li>").join("")}</ul>`;
+      root.appendChild(li);
+    });
+  }
+  dateEl.addEventListener("change", tick);
+  dateEl.addEventListener("input", tick);
+  namesEl.addEventListener("input", tick);
+  document.getElementById("printBtn").addEventListener("click", () => window.print());
+  // default: a year out from today, or next June if that's sooner? Use 1 year from today as a useful demo.
+  const d = new Date();
+  d.setFullYear(d.getFullYear() + 1);
+  const iso = d.toISOString().slice(0, 10);
+  dateEl.value = iso;
+  tick();
+  timer = setInterval(tick, 15000);
+})();
+</script>
+
+  </div>
+  <footer class="site">
+    <div class="narrow">
+      <p>© 2026 Ivan Dummett · ID Collectives. Payments are handled by Payhip.</p>
+      <p><a href="/blog/privacy.html">Privacy</a> · <a href="/blog/affiliate-disclosure.html">Affiliate disclosure</a> · <a href="/blog/contact.html">Contact</a></p>
+    </div>
+  </footer>
+</body>
+</html>

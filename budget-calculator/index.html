@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>50/30/20 Budget Calculator — Free Monthly Budget Planner</title>
+  <meta name="description" content="Free 50/30/20 budget calculator. Enter your monthly take-home pay to split needs, wants, and savings — or set your own percentages. Runs in your browser.">
+  <link rel="canonical" href="https://virgoego90.github.io/budget-calculator/">
+  <meta property="og:title" content="50/30/20 Budget Calculator — Free Monthly Budget Planner">
+  <meta property="og:description" content="Free 50/30/20 budget calculator. Enter your monthly take-home pay to split needs, wants, and savings — or set your own percentages. Runs in your browser.">
+  <meta property="og:url" content="https://virgoego90.github.io/budget-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ID Collectives">
+  <meta name="theme-color" content="#070709">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:wght@600;700&family=Sora:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/tools.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+  <div class="narrow">
+    <header class="top">
+      <a class="wordmark" href="/">
+        <span class="studio">ID Collectives</span>
+        <span class="by">A studio by Ivan Dummett</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/freebies/">Freebies</a>
+        <a href="/#planning-tools">Tools</a>
+        <a href="/#shop">Shop</a>
+        <a href="/blog/">Journal</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">Free monthly budget calculator</p>
+      <h1>50/30/20 budget calculator</h1>
+      <p class="lede">Enter your monthly take-home pay to see a 50/30/20 split — 50% needs, 30% wants, and 20% savings and extra debt payments — or set your own percentages. Everything runs in your browser. Nothing is uploaded or saved on a server.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="calc-heading">
+      <h2 id="calc-heading">Calculate your split</h2>
+      <div class="row two">
+        <div class="field">
+          <label for="income">Monthly take-home pay</label>
+          <input id="income" type="number" min="0" step="0.01" value="4000" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="currency">Currency symbol (optional)</label>
+          <input id="currency" type="text" value="$" maxlength="3">
+        </div>
+      </div>
+      <div class="row three" style="margin-top:14px">
+        <div class="field">
+          <label for="needsPct">Needs %</label>
+          <input id="needsPct" type="number" min="0" max="100" step="1" value="50">
+        </div>
+        <div class="field">
+          <label for="wantsPct">Wants %</label>
+          <input id="wantsPct" type="number" min="0" max="100" step="1" value="30">
+        </div>
+        <div class="field">
+          <label for="savePct">Savings &amp; extra debt %</label>
+          <input id="savePct" type="number" min="0" max="100" step="1" value="20">
+        </div>
+      </div>
+      <p class="hint" id="pctNote">Percentages add up to 100%.</p>
+      <div class="chip-row" style="margin-top:12px">
+        <button type="button" class="chip on" data-split="50,30,20">50/30/20</button>
+        <button type="button" class="chip" data-split="60,20,20">60/20/20</button>
+        <button type="button" class="chip" data-split="70,20,10">70/20/10</button>
+        <button type="button" class="chip" data-split="80,10,10">80/10/10</button>
+      </div>
+      <div class="bar" aria-hidden="true" style="margin-top:18px">
+        <span id="barNeeds" style="width:50%;background:#3c4ea0"></span>
+        <span id="barWants" style="width:30%;background:#e8c547"></span>
+        <span id="barSave" style="width:20%;background:#8ecf9a"></span>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="k">Needs</div>
+          <div class="v" id="outNeeds">$2,000</div>
+          <div class="s" id="outNeedsPct">50% · rent, groceries, transport, minimum bills</div>
+        </div>
+        <div class="stat">
+          <div class="k">Wants</div>
+          <div class="v" id="outWants">$1,200</div>
+          <div class="s">30% · dining out, streaming, hobbies</div>
+        </div>
+        <div class="stat">
+          <div class="k">Savings &amp; extra debt</div>
+          <div class="v" id="outSave">$800</div>
+          <div class="s">20% · emergency fund, extra payments, investing</div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:22px">Compare with what you actually spend (optional)</h3>
+      <div class="row three">
+        <div class="field">
+          <label for="actNeeds">Actual needs</label>
+          <input id="actNeeds" type="number" min="0" step="0.01" placeholder="Optional">
+        </div>
+        <div class="field">
+          <label for="actWants">Actual wants</label>
+          <input id="actWants" type="number" min="0" step="0.01" placeholder="Optional">
+        </div>
+        <div class="field">
+          <label for="actSave">Actual savings &amp; extra debt</label>
+          <input id="actSave" type="number" min="0" step="0.01" placeholder="Optional">
+        </div>
+      </div>
+      <div id="compare" class="stat-grid" hidden></div>
+      <p class="note">This calculator only splits a number you type into percentages. It is not financial advice, a recommendation, or a plan for your situation. The 50/30/20 rule is a common starting point, not a requirement. “Take-home pay” here means the amount that reaches your bank account after tax and payroll deductions.</p>
+    </section>
+
+    <section class="howto">
+      <h2>How to use a 50/30/20 monthly budget</h2>
+      <ol>
+        <li>Look up your monthly take-home pay — what’s left after tax and other payroll deductions. If you are paid weekly or every two weeks, multiply a typical paycheck by 52 or 26, then divide by 12.</li>
+        <li>Leave the split at 50/30/20, or change the percentages so they still add up to 100. A higher “needs” share is common when housing takes up more of a paycheck.</li>
+        <li>Needs are the bills you have to pay to live and work: housing, utilities, groceries, transport, insurance, childcare, and minimum loan payments. Wants are flexible spending such as restaurants, streaming, and hobbies. The last share is for savings and any extra debt payments above the minimum.</li>
+        <li>If you like, enter what you actually spent last month to see where you were over or under the target amounts.</li>
+      </ol>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>Want a month-to-month tracker?</h2>
+        <p>The Google Sheets budget template keeps income, expenses, and savings in one spreadsheet you can reuse every month. It is a tracker, not financial advice.</p>
+        <span class="price">$9.99 · instant download</span>
+      </div>
+      <a class="btn primary" href="https://payhip.com/b/vSgBL">Get the budget template</a>
+    </section>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const income = $("income"), cur = $("currency");
+  const needsPct = $("needsPct"), wantsPct = $("wantsPct"), savePct = $("savePct");
+  const act = { needs: $("actNeeds"), wants: $("actWants"), save: $("actSave") };
+  function money(n) {
+    const c = (cur.value || "$").slice(0, 3);
+    const abs = Math.abs(n);
+    const formatted = abs.toLocaleString(undefined, { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 });
+    return (n < 0 ? "-" : "") + c + formatted;
+  }
+  function num(el) { const v = parseFloat(el.value); return Number.isFinite(v) ? v : 0; }
+  function render() {
+    const inc = Math.max(0, num(income));
+    const n = Math.max(0, num(needsPct)), w = Math.max(0, num(wantsPct)), s = Math.max(0, num(savePct));
+    const total = n + w + s;
+    const note = $("pctNote");
+    if (Math.abs(total - 100) < 0.05) {
+      note.textContent = "Percentages add up to 100%.";
+      note.style.color = "";
+    } else {
+      note.textContent = "Percentages currently add up to " + total + "%. They do not need to be exact, but 100% is the usual target.";
+      note.style.color = "#e0b15a";
+    }
+    const needs = inc * n / 100, wants = inc * w / 100, save = inc * s / 100;
+    $("outNeeds").textContent = money(needs);
+    $("outWants").textContent = money(wants);
+    $("outSave").textContent = money(save);
+    $("outNeedsPct").textContent = n + "% · rent, groceries, transport, minimum bills";
+    $("barNeeds").style.width = n + "%";
+    $("barWants").style.width = w + "%";
+    $("barSave").style.width = s + "%";
+    const an = act.needs.value, aw = act.wants.value, asv = act.save.value;
+    const box = $("compare");
+    if (an === "" && aw === "" && asv === "") { box.hidden = true; box.innerHTML = ""; return; }
+    box.hidden = false;
+    function row(label, target, actualRaw) {
+      if (actualRaw === "") return "";
+      const actual = Math.max(0, parseFloat(actualRaw) || 0);
+      const diff = actual - target;
+      const word = diff > 0.004 ? "over" : diff < -0.004 ? "under" : "on";
+      return `<div class="stat"><div class="k">${label} vs target</div><div class="v">${money(actual)}</div><div class="s">${word === "on" ? "Matches the target" : money(Math.abs(diff)) + " " + word + " the " + money(target) + " target"}</div></div>`;
+    }
+    box.innerHTML = row("Needs", needs, an) + row("Wants", wants, aw) + row("Savings", save, asv);
+  }
+  [income, cur, needsPct, wantsPct, savePct, act.needs, act.wants, act.save].forEach((el) => el.addEventListener("input", render));
+  document.querySelectorAll("[data-split]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("[data-split]").forEach((b) => b.classList.remove("on"));
+      btn.classList.add("on");
+      const [n, w, s] = btn.dataset.split.split(",").map(Number);
+      needsPct.value = n; wantsPct.value = w; savePct.value = s;
+      render();
+    });
+  });
+  render();
+})();
+</script>
+
+  </div>
+  <footer class="site">
+    <div class="narrow">
+      <p>© 2026 Ivan Dummett · ID Collectives. Payments are handled by Payhip.</p>
+      <p><a href="/blog/privacy.html">Privacy</a> · <a href="/blog/affiliate-disclosure.html">Affiliate disclosure</a> · <a href="/blog/contact.html">Contact</a></p>
+    </div>
+  </footer>
+</body>
+</html>

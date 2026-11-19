@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kids Chore Chart Maker — Free Printable Weekly Chart</title>
+  <meta name="description" content="Make a printable kids chore chart with your child’s name, your chores, and the days of the week. Print or save as PDF. Free, no sign-up.">
+  <link rel="canonical" href="https://virgoego90.github.io/chore-chart-maker/">
+  <meta property="og:title" content="Kids Chore Chart Maker — Free Printable Weekly Chart">
+  <meta property="og:description" content="Make a printable kids chore chart with your child’s name, your chores, and the days of the week. Print or save as PDF. Free, no sign-up.">
+  <meta property="og:url" content="https://virgoego90.github.io/chore-chart-maker/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ID Collectives">
+  <meta name="theme-color" content="#070709">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:wght@600;700&family=Sora:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/tools.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="narrow">
+    <header class="top">
+      <a class="wordmark" href="/">
+        <span class="studio">ID Collectives</span>
+        <span class="by">A studio by Ivan Dummett</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/freebies/">Freebies</a>
+        <a href="/#planning-tools">Tools</a>
+        <a href="/#shop">Shop</a>
+        <a href="/blog/">Journal</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">Free printable chore chart</p>
+      <h1>Kids chore chart maker</h1>
+      <p class="lede">Type a child’s name, the jobs you want on the chart, and the days they apply to. Print a weekly grid for the fridge. It runs in your browser, and nothing is uploaded.</p>
+    </section>
+
+    <section class="panel no-print" aria-labelledby="cc-form">
+      <h2 id="cc-form">Build the chart</h2>
+      <div class="row two">
+        <div class="field">
+          <label for="child">Child’s name or chart title</label>
+          <input id="child" type="text" value="Sam’s chore chart" maxlength="50">
+        </div>
+        <div class="field">
+          <label for="weekof">Week of (optional)</label>
+          <input id="weekof" type="date">
+        </div>
+      </div>
+      <div class="field" style="margin-top:12px">
+        <label for="chores">Chores (one per line, up to 10)</label>
+        <textarea id="chores" style="min-height:160px">Make the bed
+Put dirty clothes in the hamper
+Set or clear the table
+Feed the pet
+Pack the school bag
+Put toys away</textarea>
+      </div>
+      <p class="hint" style="margin-top:12px">Days to show</p>
+      <div class="chip-row" id="days">
+        <button type="button" class="chip on" data-i="0">Sun</button>
+        <button type="button" class="chip on" data-i="1">Mon</button>
+        <button type="button" class="chip on" data-i="2">Tue</button>
+        <button type="button" class="chip on" data-i="3">Wed</button>
+        <button type="button" class="chip on" data-i="4">Thu</button>
+        <button type="button" class="chip on" data-i="5">Fri</button>
+        <button type="button" class="chip on" data-i="6">Sat</button>
+      </div>
+      <div class="chip-row" style="margin-top:12px">
+        <button type="button" class="chip" id="weekdays">Weekdays only</button>
+        <button type="button" class="chip" id="alldays">All 7 days</button>
+      </div>
+      <div class="field" style="margin-top:12px">
+        <label for="reward">Reward or note (optional)</label>
+        <input id="reward" type="text" placeholder="This week’s reward:" maxlength="80">
+      </div>
+      <div class="actions">
+        <button type="button" class="primary" id="printBtn">Print chart</button>
+      </div>
+      <p class="hint">Five to eight chores is plenty for most kids. This chart is a family organizer, not advice about parenting, behavior, or allowance.</p>
+    </section>
+
+    <section class="panel">
+      <div class="sheet" id="sheet">
+        <p class="print-only" style="margin:0 0 4px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#5c574f">ID Collectives · Kids chore chart</p>
+        <h2 id="outTitle" style="margin:0 0 4px;text-align:center">Chore chart</h2>
+        <p id="outSub" style="text-align:center;margin:0 0 14px;color:#5c574f;font-size:13px"></p>
+        <div style="overflow-x:auto"><table class="check-grid" id="grid"></table></div>
+        <p id="rewardLine" style="margin:16px 0 0;font-size:14px"></p>
+      </div>
+    </section>
+
+    <section class="howto">
+      <h2>How to make a printable chore chart</h2>
+      <ol>
+        <li>Type a name or a household title, and optionally a “week of” date so you can print a fresh sheet each week.</li>
+        <li>List the chores in short lines the child can read. You can switch the days to weekdays only, or leave all seven checked.</li>
+        <li>Print the chart, or save it as a PDF from the print dialog, and put it on the fridge. Tick a box or add a small sticker when a job is done.</li>
+        <li>If you want ready-made charts plus activity sheets and flashcards, the kids chore chart pack is in the shop.</li>
+      </ol>
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>Get the kids chore chart pack</h2>
+        <p>Printable chore charts, activity sheets, and flashcards for home, ready to print on Letter or A4 paper.</p>
+        <span class="price">$7.99 · instant download</span>
+      </div>
+      <a class="btn primary" href="https://payhip.com/b/4YSOp">Get the chore chart pack</a>
+    </section>
+<script>
+(function () {
+  const DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  const on = [true,true,true,true,true,true,true];
+  const child = document.getElementById("child");
+  const weekof = document.getElementById("weekof");
+  const choresEl = document.getElementById("chores");
+  const reward = document.getElementById("reward");
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
+  }
+  function chores() {
+    return choresEl.value.split(/\n+/).map((s) => s.trim()).filter(Boolean).slice(0, 10);
+  }
+  function render() {
+    const title = child.value.trim() || "Chore chart";
+    document.getElementById("outTitle").textContent = title;
+    let sub = "";
+    if (weekof.value) {
+      const p = weekof.value.split("-").map(Number);
+      const d = new Date(p[0], p[1]-1, p[2]);
+      sub = "Week of " + d.toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" });
+    }
+    document.getElementById("outSub").textContent = sub;
+    const shown = DAYS.map((n, i) => on[i] ? n : null).filter(Boolean);
+    const list = chores();
+    let html = "<thead><tr><th class='habit'>Chore</th>";
+    shown.forEach((n) => { html += "<th>" + n + "</th>"; });
+    html += "<th>Done</th></tr></thead><tbody>";
+    (list.length ? list : [" "]).forEach((c) => {
+      html += `<tr><td class="habit">${escapeHtml(c)}</td>`;
+      shown.forEach(() => { html += "<td style='height:36px'></td>"; });
+      html += "<td></td></tr>";
+    });
+    html += "</tbody>";
+    document.getElementById("grid").innerHTML = html;
+    const note = reward.value.trim();
+    document.getElementById("rewardLine").textContent = note ? (note.startsWith("This week") || note.includes(":") ? note : "This week’s reward: " + note) : "";
+  }
+  document.getElementById("days").addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-i]");
+    if (!btn) return;
+    const i = +btn.dataset.i;
+    on[i] = !on[i];
+    if (on.every((v) => !v)) on[i] = true;
+    btn.classList.toggle("on", on[i]);
+    render();
+  });
+  document.getElementById("weekdays").addEventListener("click", () => {
+    on.forEach((_, i) => on[i] = i >= 1 && i <= 5);
+    document.querySelectorAll("#days .chip").forEach((b) => b.classList.toggle("on", on[+b.dataset.i]));
+    render();
+  });
+  document.getElementById("alldays").addEventListener("click", () => {
+    on.forEach((_, i) => on[i] = true);
+    document.querySelectorAll("#days .chip").forEach((b) => b.classList.add("on"));
+    render();
+  });
+  [child, weekof, choresEl, reward].forEach((el) => el.addEventListener("input", render));
+  document.getElementById("printBtn").addEventListener("click", () => window.print());
+  render();
+})();
+</script>
+
+  </div>
+  <footer class="site">
+    <div class="narrow">
+      <p>© 2026 Ivan Dummett · ID Collectives. Payments are handled by Payhip.</p>
+      <p><a href="/blog/privacy.html">Privacy</a> · <a href="/blog/affiliate-disclosure.html">Affiliate disclosure</a> · <a href="/blog/contact.html">Contact</a></p>
+    </div>
+  </footer>
+</body>
+</html>
