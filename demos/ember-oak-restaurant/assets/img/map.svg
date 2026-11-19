@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-hidden="true">
+<rect width="1200" height="900" fill="#efe7da"/>
+<path d="M0,690 C220,640 380,760 620,720 S1000,600 1200,650 V900 H0z" fill="#cfe0e8"/>
+<rect x="760" y="90" width="300" height="210" rx="24" fill="#d9e6c8"/>
+<rect x="90" y="120" width="220" height="160" rx="20" fill="#d9e6c8" opacity=".8"/>
+<g stroke="#ffffff" stroke-linecap="round" fill="none">
+<path d="M-20,380 H1220" stroke-width="34"/><path d="M560,-20 V700" stroke-width="34"/>
+<path d="M-20,180 H1220 M-20,560 H1220 M200,-20 V700 M900,-20 V680" stroke-width="18"/>
+<path d="M380,-20 V700 M740,-20 V700 M1060,-20 V660 M-20,470 H1220 M-20,290 H1220" stroke-width="9" opacity=".9"/>
+</g>
+<g font-family="Inter, Arial, sans-serif" font-size="22" fill="#7a6e62" font-weight="600">
+<text x="40" y="370">Juniper Street</text><text x="575" y="60" transform="rotate(90 575 60)">Main Avenue</text>
+<text x="800" y="205">Riverside Park</text><text x="80" y="800" fill="#5f7f8c">Willow River</text></g>
+<g transform="translate(560 380)"><circle r="70" fill="#b4441f" opacity=".15"/><path d="M0,0 C-14,-26 -40,-44 -40,-70 a40,40 0 0 1 80,0 C40,-44 14,-26 0,0z" fill="#b4441f"/><circle cy="-70" r="15" fill="#fff"/></g>
+<g font-family="Inter, Arial, sans-serif"><rect x="610" y="300" rx="12" width="250" height="52" fill="#fff" stroke="#e0d6c8"/><text x="630" y="334" font-size="22" font-weight="700" fill="#1f1915">Ember &amp; Oak</text></g>
+</svg>

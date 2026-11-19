@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-hidden="true">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d8d9c4"/><stop offset="1" stop-color="#a3a785"/></linearGradient>
+<radialGradient id="l" cx=".3" cy=".25" r=".8"><stop offset="0" stop-color="#ffffff" stop-opacity=".22"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient></defs>
+<rect width="800" height="1000" fill="url(#g)"/><circle cx="140" cy="449" r="272" fill="#ffffff" opacity="0.07"/><circle cx="499" cy="389" r="232" fill="#ffffff" opacity="0.07"/><circle cx="337" cy="591" r="315" fill="#ffffff" opacity="0.05"/><circle cx="741" cy="204" r="148" fill="#ffffff" opacity="0.07"/><circle cx="562" cy="463" r="166" fill="#ffffff" opacity="0.09"/><circle cx="348" cy="528" r="270" fill="#ffffff" opacity="0.07"/><rect width="800" height="1000" fill="url(#l)"/>
+<g transform="translate(400.0 500.0) scale(0.640)" stroke="#ffffff" fill="#ffffff" opacity=".92"><circle cy="-90" r="160" fill="none" stroke-width="10"/><path d="M0,70 v170 M0,0 l-70,-70 M0,40 l80,-80 M-120,240 h240" fill="none" stroke-width="10" stroke-linecap="round"/></g>
+</svg>

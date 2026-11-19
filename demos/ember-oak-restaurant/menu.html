@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu | Ember &amp; Oak, Riverton</title>
+<meta name="description" content="The full Ember &amp; Oak menu: small plates, wood-fired mains, sides, desserts, weekend brunch, and drinks, with vegetarian, vegan, and gluten-free filters.">
+<link rel="canonical" href="https://virgoego90.github.io/demos/ember-oak-restaurant/menu.html">
+<meta name="theme-color" content="#1d1714">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>document.documentElement.classList.remove("no-js")</script>
+</head>
+<body class="menu-page">
+<a class="skip-link" href="#main">Skip to menu</a>
+<aside class="demo-bar" aria-label="Template demo notice">Live demo of the <strong>Ember & Oak</strong> template. <a href="https://payhip.com/b/ETc26">Get the full template</a> · <a href="https://virgoego90.github.io/#templates">More templates</a></aside>
+<header class="menu-top">
+  <div class="container">
+    <p class="eyebrow" style="color:var(--accent-on-dark);margin:0 0 6px">Ember &amp; Oak</p>
+    <h1>Tonight's menu</h1>
+    <p>Wood-fired kitchen &amp; wine bar · <a href="index.html" style="color:#fff">Back to website</a></p>
+  </div>
+</header>
+<div class="menu-tools">
+  <div class="container">
+    <nav class="menu-cats" aria-label="Menu sections">
+        <a href="#c-small">Small plates</a>
+        <a href="#c-hearth">From the hearth</a>
+        <a href="#c-sides">Sides</a>
+        <a href="#c-dessert">Dessert</a>
+        <a href="#c-brunch">Weekend brunch</a>
+        <a href="#c-drinks">Drinks</a>
+    </nav>
+    <div class="menu-filter" role="search">
+      <label class="visually-hidden" for="menu-search">Search the menu</label>
+      <input id="menu-search" type="search" placeholder="Search dishes, e.g. chicken" autocomplete="off">
+      <label class="choice"><input type="checkbox" value="V" data-filter> Vegetarian</label>
+      <label class="choice"><input type="checkbox" value="VG" data-filter> Vegan</label>
+      <label class="choice"><input type="checkbox" value="GF" data-filter> Gluten-free</label>
+    </div>
+  </div>
+</div>
+<main id="main" class="container">
+    <section class="menu-section" id="c-small" aria-labelledby="h-small" data-menu-section>
+      <h2 id="h-small">Small plates</h2>
+      <div class="menu-list">
+        <div class="dish" data-dish data-tags="V GF"><h3>Charred carrots <span class="tag">V</span><span class="tag">GF</span></h3><span class="price">$12</span><p>Whipped feta, hot honey, toasted pistachio.</p></div>
+        <div class="dish" data-dish data-tags="V"><h3>Hearth bread &amp; butter <span class="tag">V</span></h3><span class="price">$8</span><p>Morning sourdough, cultured butter, flaky salt.</p></div>
+        <div class="dish" data-dish data-tags="VG"><h3>Crispy Brussels sprouts <span class="tag">VG</span></h3><span class="price">$11</span><p>Chili crisp, lime, fried shallot.</p></div>
+        <div class="dish" data-dish data-tags="GF"><h3>Smoked trout rillettes <span class="tag">GF</span></h3><span class="price">$14</span><p>Crème fraîche, dill, pickled onion, rye crackers.</p></div>
+        <div class="dish" data-dish data-tags="V"><h3>Burrata &amp; stone fruit <span class="tag">V</span></h3><span class="price">$16</span><p>Basil oil, black pepper, grilled bread.</p></div>
+      </div>
+    </section>
+    <section class="menu-section" id="c-hearth" aria-labelledby="h-hearth" data-menu-section>
+      <h2 id="h-hearth">From the hearth</h2>
+      <div class="menu-list">
+        <div class="dish" data-dish data-tags="GF"><h3>Oak-roasted half chicken <span class="tag">GF</span></h3><span class="price">$29</span><p>Salsa verde, crispy potatoes, charred lemon.</p></div>
+        <div class="dish" data-dish data-tags="V"><h3>Wild mushroom pappardelle <span class="tag">V</span></h3><span class="price">$24</span><p>Brown butter, aged pecorino, thyme.</p></div>
+        <div class="dish" data-dish data-tags="GF"><h3>Hanger steak frites <span class="tag">GF</span></h3><span class="price">$34</span><p>Ember-grilled, chimichurri, hand-cut fries.</p></div>
+        <div class="dish" data-dish data-tags="VG"><h3>Coal-roasted squash <span class="tag">VG</span></h3><span class="price">$22</span><p>Farro, pomegranate, tahini, sage.</p></div>
+        <div class="dish" data-dish data-tags="GF"><h3>Grilled market fish <span class="tag">GF</span></h3><span class="price">$31</span><p>Fennel, white beans, preserved lemon.</p></div>
+      </div>
+    </section>
+    <section class="menu-section" id="c-sides" aria-labelledby="h-sides" data-menu-section>
+      <h2 id="h-sides">Sides</h2>
+      <div class="menu-list">
+        <div class="dish" data-dish data-tags="V GF"><h3>Crispy potatoes <span class="tag">V</span><span class="tag">GF</span></h3><span class="price">$8</span><p>Rosemary salt, aioli.</p></div>
+        <div class="dish" data-dish data-tags="V GF"><h3>Little gem salad <span class="tag">V</span><span class="tag">GF</span></h3><span class="price">$9</span><p>Buttermilk dressing, herbs, radish.</p></div>
+        <div class="dish" data-dish data-tags="VG GF"><h3>Charred greens <span class="tag">VG</span><span class="tag">GF</span></h3><span class="price">$8</span><p>Garlic, chili, lemon.</p></div>
+      </div>
+    </section>
+    <section class="menu-section" id="c-dessert" aria-labelledby="h-dessert" data-menu-section>
+      <h2 id="h-dessert">Dessert</h2>
+      <div class="menu-list">
+        <div class="dish" data-dish data-tags="V"><h3>Burnt Basque cheesecake <span class="tag">V</span></h3><span class="price">$10</span><p>Roasted plum, sea salt.</p></div>
+        <div class="dish" data-dish data-tags="V"><h3>Olive oil cake <span class="tag">V</span></h3><span class="price">$9</span><p>Citrus curd, whipped mascarpone.</p></div>
+        <div class="dish" data-dish data-tags="V GF"><h3>Dark chocolate pot <span class="tag">V</span><span class="tag">GF</span></h3><span class="price">$10</span><p>Smoked cream, cocoa nib crunch.</p></div>
+      </div>
+    </section>
+    <section class="menu-section" id="c-brunch" aria-labelledby="h-brunch" data-menu-section>
+      <h2 id="h-brunch">Weekend brunch</h2>
+      <div class="menu-list">
+        <div class="dish" data-dish data-tags="V"><h3>Hearth eggs <span class="tag">V</span></h3><span class="price">$14</span><p>Two eggs from the oven, greens, toast.</p></div>
+        <div class="dish" data-dish data-tags="V"><h3>Buttermilk pancakes <span class="tag">V</span></h3><span class="price">$13</span><p>Maple, cultured butter, seasonal fruit.</p></div>
+        <div class="dish" data-dish data-tags=""><h3>Brunch burger </h3><span class="price">$17</span><p>Smash patty, egg, pickles, fries.</p></div>
+      </div>
+    </section>
+    <section class="menu-section" id="c-drinks" aria-labelledby="h-drinks" data-menu-section>
+      <h2 id="h-drinks">Drinks</h2>
+      <div class="menu-list">
+        <div class="dish" data-dish data-tags=""><h3>Smoked old fashioned </h3><span class="price">$15</span><p>Bourbon, oak smoke, orange, demerara.</p></div>
+        <div class="dish" data-dish data-tags=""><h3>House spritz </h3><span class="price">$12</span><p>Bitter orange, prosecco, soda.</p></div>
+        <div class="dish" data-dish data-tags="VG"><h3>Skin-contact white, glass <span class="tag">VG</span></h3><span class="price">$13</span><p>Ask about tonight&#x27;s pour.</p></div>
+        <div class="dish" data-dish data-tags="VG"><h3>Garden spritz (zero proof) <span class="tag">VG</span></h3><span class="price">$8</span><p>Cucumber, basil, verjus, soda.</p></div>
+        <div class="dish" data-dish data-tags="VG GF"><h3>Drip coffee <span class="tag">VG</span><span class="tag">GF</span></h3><span class="price">$4</span><p>Riverton Roasters, free refills.</p></div>
+      </div>
+    </section>
+  <p class="menu-empty" data-menu-empty role="status" hidden>No dishes match. Try clearing a filter.</p>
+  <p class="legend">V vegetarian · VG vegan (also counts as vegetarian) · GF gluten-free. Please tell your server about any allergy. Prices include service; menu changes with the seasons.</p>
+</main>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/menu.js" defer></script>
+</body>
+</html>
