@@ -107,7 +107,7 @@ button.ghost:hover, .btn.ghost:hover { border-color: var(--gold); text-decoratio
   margin: 12px 0 40px;
 }
 .cta p { margin: 0; color: var(--soft); }
-.cta .price { font-family: "IBM Plex Mono", monospace; color: var(--gold); display: block; margin-top: 8px; }
+.cta .price { font-family: Sora, system-ui, sans-serif; font-variant-numeric: tabular-nums; letter-spacing: 0; white-space: nowrap; color: var(--gold); display: block; margin-top: 8px; }
 .note {
   color: var(--mute);
   font-size: .86rem;
