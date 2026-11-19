@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ID Collectives — Printable Planners, Budget Templates, Wall Art &amp; Free Tools</title>
-  <meta name="description" content="ID Collectives is Ivan Dummett's studio shop: printable planners, a Google Sheets budget template, a 2027 wedding binder, large-print word searches, wall art, and free tools, plus the Neon Sankofa Afrofuturism packs.">
+  <meta name="description" content="ID Collectives is Ivan Dummett's studio shop: printable planners, seasonal and worldwide printables, a Google Sheets budget template, a 2027 wedding binder, large-print word searches, wall art, and free tools, plus the Neon Sankofa Afrofuturism packs.">
   <link rel="canonical" href="https://virgoego90.github.io/">
   <meta property="og:title" content="ID Collectives — Printable Planners, Budget Templates, Wall Art &amp; Free Tools">
-  <meta property="og:description" content="Printable planners, budget and wedding templates, puzzles, wall art, free tools, and Afrofuturism art packs. Instant downloads through Payhip.">
+  <meta property="og:description" content="Printable planners, seasonal and worldwide printables, budget and wedding templates, puzzles, wall art, free tools, and Afrofuturism art packs. Instant downloads through Payhip.">
   <meta property="og:url" content="https://virgoego90.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="ID Collectives">
@@ -87,7 +87,7 @@
     .product:hover { border-color: #5a5338; text-decoration: none; }
     .product h3 { font-family: Syne, sans-serif; font-size: 1rem; margin: 0; line-height: 1.3; }
     .product p { margin: 0; color: var(--mute); font-size: .85rem; flex: 1; }
-    .price { font-family: "IBM Plex Mono", monospace; color: var(--gold); font-size: .95rem; }
+    .price { font-family: "IBM Plex Mono", monospace; color: var(--gold); font-size: .95rem; margin-top: auto; }
     .in-bundle { color: #c9bfa6; font-size: .78rem; }
     .product.bundle { border-color: #5a5338; }
     .email-box { background: var(--ink); border: 1px solid #5a5338; border-radius: 16px; padding: 18px; }
@@ -96,6 +96,24 @@
     .btn-gold { background: var(--gold); color: #16120a; }
     .btn-line { border: 1px solid var(--line); color: var(--paper); }
     .btn-gold:hover, .btn-line:hover { text-decoration: none; filter: brightness(1.08); }
+
+    .product img {
+      width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover;
+      border-radius: 10px; background: #16161e; display: block;
+    }
+    .product .buy {
+      font-weight: 600; font-size: .88rem; color: var(--gold);
+    }
+    .group-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+    .group-head .group-label { margin: 0; }
+    .group-head a { font-size: .85rem; }
+    @media (max-width: 720px) {
+      #worldwide .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #worldwide .product { padding: 10px; gap: 6px; }
+      #worldwide .product h3 { font-size: .92rem; }
+      #worldwide .product p { display: none; }
+      header nav { gap: 12px 16px; }
+    }
     footer { border-top: 1px solid var(--line); margin-top: 64px; padding: 28px 0 40px; color: var(--mute); font-size: .88rem; }
     footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     footer a { color: var(--paper); }
@@ -115,6 +133,7 @@
         <a href="#bundles">Bundles</a>
         <a href="blog/">Journal</a>
         <a href="flipledger/">FlipLedger</a>
+        <a href="worldwide/">Worldwide</a>
         <a href="#shop">Shop</a>
       </nav>
     </header>
@@ -260,6 +279,194 @@
             <p>In build. Founding list open: 100 spots at $9/mo locked vs $19/mo regular, 7-day free trial at launch. Try the true-profit calculator on the page.</p>
             <span class="price">Founding list — free to join</span>
           </a>
+        </div>
+      </section>
+      <section id="worldwide">
+        <div class="group-head">
+          <p class="group-label">Worldwide &amp; Seasonal</p>
+          <a href="worldwide/">See all 20, grouped →</a>
+        </div>
+        <div class="products">
+          <article class="product">
+            <a href="https://payhip.com/b/9eYdT" aria-label="Buy Kwanzaa Activity Pack">
+              <img src="images/worldwide/kwanzaa-family-kids-activity-pack.webp" alt="Preview of Kwanzaa Activity Pack" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Kwanzaa Activity Pack</h3>
+            <p>Seven principles pages, a candle tracker, puzzles and coloring for 26 December 2026 to 1 January 2027.</p>
+            <span class="price">$4.99</span>
+            <a class="buy" href="https://payhip.com/b/9eYdT">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/3whaI" aria-label="Buy Black History Month 2027 Activity Pack">
+              <img src="images/worldwide/black-history-month-2027-black-press-activity-pack.webp" alt="Preview of Black History Month 2027 Activity Pack" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Black History Month 2027 Activity Pack</h3>
+            <p>A classroom and family pack on the Black press, from 1827 to today.</p>
+            <span class="price">$5.99</span>
+            <a class="buy" href="https://payhip.com/b/3whaI">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/WD23s" aria-label="Buy Lunar New Year 2027 Kids Activity Pack">
+              <img src="images/worldwide/lunar-new-year-2027-kids-activity-pack.webp" alt="Preview of Lunar New Year 2027 Kids Activity Pack" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Lunar New Year 2027 Kids Activity Pack</h3>
+            <p>Year of the Goat activities, coloring and puzzles for children.</p>
+            <span class="price">$4.99</span>
+            <a class="buy" href="https://payhip.com/b/WD23s">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/14Cvz" aria-label="Buy Lunar New Year 2027 Family Planner">
+              <img src="images/worldwide/lunar-new-year-2027-family-planner.webp" alt="Preview of Lunar New Year 2027 Family Planner" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Lunar New Year 2027 Family Planner</h3>
+            <p>A family planner for visits, meals, gifts and the new year.</p>
+            <span class="price">$4.99</span>
+            <a class="buy" href="https://payhip.com/b/14Cvz">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/8UDn2" aria-label="Buy Ramadan Planner 2027">
+              <img src="images/worldwide/ramadan-planner-2027.webp" alt="Preview of Ramadan Planner 2027" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Ramadan Planner 2027</h3>
+            <p>A dated planner for Ramadan 1448, with fasting, prayer and reflection pages.</p>
+            <span class="price">$5.99</span>
+            <a class="buy" href="https://payhip.com/b/8UDn2">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/5IU9q" aria-label="Buy Ramadan Activity Pack for Kids 2027">
+              <img src="images/worldwide/ramadan-kids-activity-pack-2027.webp" alt="Preview of Ramadan Activity Pack for Kids 2027" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Ramadan Activity Pack for Kids 2027</h3>
+            <p>A good deeds chart, activities and coloring for children.</p>
+            <span class="price">$4.99</span>
+            <a class="buy" href="https://payhip.com/b/5IU9q">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/QA2qp" aria-label="Buy Lent 2027 Planner">
+              <img src="images/worldwide/lent-2027-family-planner.webp" alt="Preview of Lent 2027 Planner" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Lent 2027 Planner</h3>
+            <p>A dated 40-day family planner for Lent 2027.</p>
+            <span class="price">$5.99</span>
+            <a class="buy" href="https://payhip.com/b/QA2qp">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/siV0A" aria-label="Buy Valentine's Day Cards for Kids">
+              <img src="images/worldwide/valentines-day-classroom-cards-kids.webp" alt="Preview of Valentine's Day Cards for Kids" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Valentine's Day Cards for Kids</h3>
+            <p>Color and coloring classroom cards, ready to print and cut.</p>
+            <span class="price">$3.99</span>
+            <a class="buy" href="https://payhip.com/b/siV0A">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/2o5bD" aria-label="Buy Eid al-Fitr Printables 2027">
+              <img src="images/worldwide/eid-al-fitr-2027-printables.webp" alt="Preview of Eid al-Fitr Printables 2027" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Eid al-Fitr Printables 2027</h3>
+            <p>Eid Mubarak cards, Eidi envelopes, gift tags, a banner and a kids page.</p>
+            <span class="price">$4.99</span>
+            <a class="buy" href="https://payhip.com/b/2o5bD">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/UwH5o" aria-label="Buy UK Budget Planner 2027/28">
+              <img src="images/worldwide/uk-budget-planner-2027-28.webp" alt="Preview of UK Budget Planner 2027/28" width="800" height="600" loading="lazy">
+            </a>
+            <h3>UK Budget Planner 2027/28</h3>
+            <p>An A4 monthly budget plus spreadsheet for the 6 April to 5 April tax year.</p>
+            <span class="price">$6.99</span>
+            <a class="buy" href="https://payhip.com/b/UwH5o">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/Bvhxj" aria-label="Buy UK Sole Trader Record Book 2027/28">
+              <img src="images/worldwide/uk-sole-trader-income-expense-record-book-2027-28.webp" alt="Preview of UK Sole Trader Record Book 2027/28" width="800" height="600" loading="lazy">
+            </a>
+            <h3>UK Sole Trader Record Book 2027/28</h3>
+            <p>Income and expense records for the 2027/28 tax year, as a PDF and a spreadsheet.</p>
+            <span class="price">$7.99</span>
+            <a class="buy" href="https://payhip.com/b/Bvhxj">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/F7akL" aria-label="Buy Australia &amp; New Zealand Budget Planner 2027–28">
+              <img src="images/worldwide/australia-new-zealand-budget-planner-2027-28.webp" alt="Preview of Australia and New Zealand Budget Planner 2027–28" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Australia &amp; New Zealand Budget Planner 2027–28</h3>
+            <p>Two editions: the Australian financial year and the New Zealand tax year, each with a planner and a spreadsheet.</p>
+            <span class="price">$6.99</span>
+            <a class="buy" href="https://payhip.com/b/F7akL">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/QozsV" aria-label="Buy Indian Wedding Planner">
+              <img src="images/worldwide/indian-wedding-planner.webp" alt="Preview of Indian Wedding Planner" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Indian Wedding Planner</h3>
+            <p>A multi-event planner from roka to reception, with a budget workbook.</p>
+            <span class="price">$9.99</span>
+            <a class="buy" href="https://payhip.com/b/QozsV">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/iEpcm" aria-label="Buy Filipino Debut Planner">
+              <img src="images/worldwide/filipino-debut-planner.webp" alt="Preview of Filipino Debut Planner" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Filipino Debut Planner</h3>
+            <p>18 roses, 18 candles, 18 treasures, cotillion, budget and checklist.</p>
+            <span class="price">$6.99</span>
+            <a class="buy" href="https://payhip.com/b/iEpcm">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/asGR9" aria-label="Buy Multi-Currency Travel Budget Spreadsheet">
+              <img src="images/worldwide/multi-currency-travel-budget-spreadsheet.webp" alt="Preview of Multi-Currency Travel Budget Spreadsheet" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Multi-Currency Travel Budget Spreadsheet</h3>
+            <p>Plan a trip across currencies, with a printable setup guide.</p>
+            <span class="price">$6.99</span>
+            <a class="buy" href="https://payhip.com/b/asGR9">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/NzvFt" aria-label="Buy IELTS Study Planner">
+              <img src="images/worldwide/ielts-study-planner.webp" alt="Preview of IELTS Study Planner" width="800" height="600" loading="lazy">
+            </a>
+            <h3>IELTS Study Planner</h3>
+            <p>A study plan and band score tracker for IELTS preparation.</p>
+            <span class="price">$5.99</span>
+            <a class="buy" href="https://payhip.com/b/NzvFt">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/mZv6J" aria-label="Buy IB Diploma Programme Planner">
+              <img src="images/worldwide/ib-diploma-programme-planner.webp" alt="Preview of IB Diploma Programme Planner" width="800" height="600" loading="lazy">
+            </a>
+            <h3>IB Diploma Programme Planner</h3>
+            <p>IA, Extended Essay, TOK and CAS trackers for the Diploma Programme.</p>
+            <span class="price">$6.99</span>
+            <a class="buy" href="https://payhip.com/b/mZv6J">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/qLQS8" aria-label="Buy Immigration &amp; Residency Document Organizer">
+              <img src="images/worldwide/immigration-residency-document-organizer.webp" alt="Preview of Immigration and Residency Document Organizer" width="800" height="600" loading="lazy">
+            </a>
+            <h3>Immigration &amp; Residency Document Organizer</h3>
+            <p>A document checklist and folder system. Not legal advice.</p>
+            <span class="price">$6.99</span>
+            <a class="buy" href="https://payhip.com/b/qLQS8">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/ySMN1" aria-label="Buy UK Pregnancy &amp; New Baby Planner">
+              <img src="images/worldwide/uk-pregnancy-new-baby-planner.webp" alt="Preview of UK Pregnancy and New Baby Planner" width="800" height="600" loading="lazy">
+            </a>
+            <h3>UK Pregnancy &amp; New Baby Planner</h3>
+            <p>Pregnancy, maternity leave and hospital bag pages for the UK.</p>
+            <span class="price">$6.99</span>
+            <a class="buy" href="https://payhip.com/b/ySMN1">Buy</a>
+          </article>
+          <article class="product">
+            <a href="https://payhip.com/b/2TORH" aria-label="Buy GCSE &amp; A-level Revision Planner 2027">
+              <img src="images/worldwide/gcse-a-level-revision-planner-2027.webp" alt="Preview of GCSE and A-level Revision Planner 2027" width="800" height="600" loading="lazy">
+            </a>
+            <h3>GCSE &amp; A-level Revision Planner 2027</h3>
+            <p>A revision timetable, checklists and past-paper tracker for 2027 exams.</p>
+            <span class="price">$4.99</span>
+            <a class="buy" href="https://payhip.com/b/2TORH">Buy</a>
+          </article>
         </div>
       </section>
       <section id="bundles">
