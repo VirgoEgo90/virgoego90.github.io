@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-hidden="true">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#163028"/><stop offset="1" stop-color="#1c3c32"/></linearGradient>
+<radialGradient id="l" cx=".3" cy=".25" r=".8"><stop offset="0" stop-color="#ffffff" stop-opacity=".22"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient></defs>
+<rect width="800" height="800" fill="url(#g)"/><circle cx="654" cy="114" r="132" fill="#ffffff" opacity="0.09"/><circle cx="281" cy="250" r="234" fill="#ffffff" opacity="0.05"/><circle cx="754" cy="104" r="164" fill="#ffffff" opacity="0.09"/><circle cx="432" cy="32" r="135" fill="#ffffff" opacity="0.05"/><circle cx="223" cy="238" r="378" fill="#ffffff" opacity="0.09"/><circle cx="27" cy="574" r="221" fill="#ffffff" opacity="0.09"/><rect width="800" height="800" fill="url(#l)"/>
+<g transform="translate(400.0 400.0) scale(0.800)" stroke="#e2c56a" fill="#e2c56a" opacity=".92"><path d="M-20,-260 h40 v40 h-40z M-90,-220 h180 l40,80 v180 h-260 v-180z M-90,40 h180" fill="none" stroke-width="10" stroke-linejoin="round"/><path d="M-50,-140 h100 M-50,-60 h100 M-50,20 h100" stroke-width="8" opacity=".6"/><path d="M0,-260 v-40" stroke-width="8" stroke-linecap="round"/></g>
+</svg>
