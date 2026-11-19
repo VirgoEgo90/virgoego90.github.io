@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Make a Monthly Budget in Google Sheets (Step by Step) | ID Collectives</title>
+  <meta name="description" content="A step-by-step way to set up a monthly budget in Google Sheets: categories, an income table, an expense log with SUMIFS, a monthly summary, and a chart. Free to build, or start from a template.">
+  <link rel="canonical" href="https://virgoego90.github.io/guides/google-sheets-monthly-budget/">
+  <meta property="og:title" content="How to Make a Monthly Budget in Google Sheets (Step by Step) | ID Collectives">
+  <meta property="og:description" content="A step-by-step way to set up a monthly budget in Google Sheets: categories, an income table, an expense log with SUMIFS, a monthly summary, and a chart. Free to build, or start from a template.">
+  <meta property="og:url" content="https://virgoego90.github.io/guides/google-sheets-monthly-budget/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ID Collectives">
+  <meta name="theme-color" content="#070709">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Sora:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/tools.css">
+  <link rel="stylesheet" href="/assets/guides.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to make a monthly budget in Google Sheets", "description": "A step-by-step way to set up a monthly budget in Google Sheets: categories, an income table, an expense log with SUMIFS, a monthly summary, and a chart. Free to build, or start from a template.", "author": {"@type": "Person", "name": "Ivan Dummett"}, "publisher": {"@type": "Organization", "name": "ID Collectives"}, "datePublished": "2026-11-18", "dateModified": "2026-11-18", "mainEntityOfPage": "https://virgoego90.github.io/guides/google-sheets-monthly-budget/"}</script>
+</head>
+<body>
+  <div class="narrow">
+    <header class="top">
+      <a class="wordmark" href="/">
+        <span class="studio">ID Collectives</span>
+        <span class="by">A studio by Ivan Dummett</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/guides/">Guides</a>
+        <a href="/freebies/">Freebies</a>
+        <a href="/#planning-tools">Tools</a>
+        <a href="/#shop">Shop</a>
+        <a href="/blog/">Journal</a>
+      </nav>
+    </header>
+
+    <p class="crumbs"><a href="/">Home</a> / <a href="/guides/">Guides</a> / Spreadsheets</p>
+    <section class="hero" style="padding-top:18px">
+      <p class="eyebrow">Spreadsheets guide</p>
+      <h1>How to make a monthly budget in Google Sheets</h1>
+      <p class="meta">By Ivan Dummett · Updated November 18, 2026</p>
+      <div class="toolbox"><a class="btn primary" href="/budget-calculator/">Try the free 50/30/20 calculator first</a></div>
+    </section>
+    <article class="article">
+
+<p>Google Sheets is free, works on a phone, and is flexible enough to hold a full monthly budget. You can build one yourself in under an hour. Here is a simple structure that scales from a single month to a full year.</p>
+
+<h2>1. Make a Categories tab</h2>
+<p>Create a sheet called <strong>Categories</strong> and list your spending categories down column A: Rent, Utilities, Groceries, Transport, Insurance, Dining out, Subscriptions, Gifts, Savings, and so on. Keep the list short at first. You can add more later.</p>
+<p>This list powers the dropdowns in the next step, so you only ever type a category name once.</p>
+
+<h2>2. Build an expense log</h2>
+<p>On a sheet called <strong>Expenses</strong>, add the headers <em>Date</em>, <em>Description</em>, <em>Category</em>, and <em>Amount</em>. Then select the Category column and choose <strong>Data → Data validation</strong>, set the criteria to "Dropdown (from a range)," and point it at your Categories list. Now every expense row gets a dropdown, which keeps the totals accurate.</p>
+<p>Format the Date column as a date and the Amount column as currency.</p>
+
+<h2>3. Add an income table</h2>
+<p>An <strong>Income</strong> sheet with <em>Date</em>, <em>Source</em>, and <em>Amount</em> is enough. If you have more than one paycheck or side income, each gets its own row.</p>
+
+<h2>4. Total each category with SUMIFS</h2>
+<p>Create a <strong>Summary</strong> sheet. Put the categories in column A (you can reference the Categories tab). In column B, total each category for one month with SUMIFS. If the month's first day is in cell <code>B1</code>, the formula looks like this:</p>
+<pre><code>=SUMIFS(Expenses!D:D, Expenses!C:C, A3,
+        Expenses!A:A, "&gt;="&amp;$B$1,
+        Expenses!A:A, "&lt;"&amp;EDATE($B$1,1))</code></pre>
+<p>It adds every amount in the Expenses sheet where the category matches and the date falls inside that month. Copy it down the column, then across for more months by changing the start date.</p>
+
+<h2>5. Compare with a plan</h2>
+<p>Next to each actual total, add a <em>Planned</em> column and a <em>Difference</em> column (<code>=Planned − Actual</code>). Conditional formatting makes overspending easy to spot: select the Difference column, choose <strong>Format → Conditional formatting</strong>, and set "Less than 0" to a soft red.</p>
+
+<h2>6. Add a chart</h2>
+<p>Select the category names and actual totals, then choose <strong>Insert → Chart</strong>. A bar chart is usually easier to read than a pie chart once you have more than five categories.</p>
+
+<h2>7. Make it a monthly routine</h2>
+<ul>
+<li>Log expenses once or twice a week rather than every day.</li>
+<li>On the first of the month, copy the summary columns forward.</li>
+<li>Look at the Difference column and decide one thing to adjust next month.</li>
+</ul>
+
+<h2>Common problems</h2>
+<h3>My SUMIFS returns zero</h3>
+<p>Check that the dates are real dates, not text. Click a date cell: if it's left-aligned by default, it may be text. Retype it, or use <strong>Format → Number → Date</strong>.</p>
+<h3>The dropdown doesn't show new categories</h3>
+<p>Extend the validation range to cover empty rows below your list, such as <code>Categories!A2:A100</code>.</p>
+
+<h2>Prefer to skip the setup?</h2>
+<p>If you'd rather start tracking today, the ID Collectives budget template has this structure already built: income, expenses, budget limits, savings goals, a debt tracker, and a 12-month dashboard with charts. It's a tracker, not financial advice.</p>
+
+    </article>
+    <section class="offer" aria-label="Related downloads">
+      <div class="panel accent">
+        <span class="k">Printable / template</span>
+        <h3 style="margin:0">Google Sheets Budget Template</h3>
+        <p>Eight ready-made sheets with dropdowns, a 12-month dashboard, savings goals, and a debt tracker.</p>
+        <span class="price">$9.99 · instant download</span>
+        <a class="btn primary" href="https://payhip.com/b/vSgBL">Get the Google Sheets Budget Template</a>
+      </div>
+      <div class="panel">
+        <span class="k">Bundle</span>
+        <h3 style="margin:0">Wedding + Budget Bundle</h3>
+        <p>The budget template plus the 2027 wedding planner binder.</p>
+        <span class="price">$17.99 · instant download</span>
+        <a class="btn ghost" href="https://payhip.com/b/YjIF3">See the bundle</a>
+      </div>
+    </section>
+    <section class="panel signup" aria-labelledby="signup-h">
+      <h2 id="signup-h">Free printables by email</h2>
+      <p class="hint" style="margin-top:0">Pick any free sample below. Payhip emails you the download, and you'll hear about new printables from ID Collectives. You can unsubscribe at any time.</p>
+      <ul><li><a href="https://payhip.com/b/yJ8U4">ADHD planner daily page</a></li><li><a href="https://payhip.com/b/rpG8D">3 large-print word searches</a></li><li><a href="https://payhip.com/b/weFLb">12-month wedding checklist</a></li><li><a href="https://payhip.com/b/XieTb">8×10 lavender botanical print</a></li></ul>
+    </section>
+    <section class="panel related"><h2>Related guides</h2><a href="/guides/50-30-20-budget-rule/">The 50/30/20 budget rule, explained →</a><a href="/guides/habit-tracker-that-sticks/">How to make a habit tracker you&#x27;ll actually keep using →</a><a href="/guides/">All guides →</a></section>
+  </div>
+  <footer class="site">
+    <div class="narrow">
+      <p>© 2026 Ivan Dummett · ID Collectives. Payments are handled by Payhip.</p>
+      <p><a href="/blog/privacy.html">Privacy</a> · <a href="/blog/affiliate-disclosure.html">Disclosure</a> · <a href="/blog/contact.html">Contact</a></p>
+    </div>
+  </footer>
+</body>
+</html>
