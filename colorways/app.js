@@ -635,8 +635,8 @@
     document.querySelectorAll("[data-pro-feature]").forEach((btn) => {
       btn.addEventListener("click", () => openProModal(btn.dataset.proFeature));
     });
-    els.proModalClose.addEventListener("click", () => els.proModal.close());
-    els.proModalPay.addEventListener("click", (e) => {
+    if (els.proModalClose) els.proModalClose.addEventListener("click", () => els.proModal.close());
+    if (els.proModalPay) els.proModalPay.addEventListener("click", (e) => {
       e.preventDefault();
     });
 

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ember &amp; Oak | Wood-Fired Kitchen &amp; Wine Bar in Riverton</title>
+<title>Template demo: Ember &amp; Oak | Wood-Fired Kitchen &amp; Wine Bar in Riverton</title>
 <meta name="description" content="Ember &amp; Oak is a wood-fired neighborhood kitchen and wine bar in Riverton. Seasonal plates, natural wine, and weekend brunch. Book a table online.">
 <link rel="canonical" href="https://virgoego90.github.io/demos/ember-oak-restaurant/">
 <meta property="og:type" content="restaurant">
-<meta property="og:title" content="Ember &amp; Oak | Wood-Fired Kitchen &amp; Wine Bar">
-<meta property="og:description" content="Seasonal plates cooked over oak, natural wine, and weekend brunch.">
-<meta property="og:image" content="https://virgoego90.github.io/demos/ember-oak-restaurant/assets/img/hero.svg">
+<meta property="og:title" content="Ember &amp; Oak restaurant website template, live demo | ID Collectives">
+<meta property="og:description" content="Live demo of the Ember &amp; Oak restaurant website template by ID Collectives. Sample business and content, not a real company. Get the full HTML template for $19.">
+<meta property="og:image" content="https://virgoego90.github.io/demos/ember-oak-restaurant/previews/og.jpg">
 <meta name="theme-color" content="#1d1714">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +17,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <script>document.documentElement.classList.remove("no-js")</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Restaurant","name":"Ember & Oak","servesCuisine":["Modern American","Wood-fired"],"priceRange":"$$","telephone":"+1-555-014-2290","menu":"https://www.example.com/menu.html","acceptsReservations":"True","address":{"@type":"PostalAddress","streetAddress":"214 Juniper Street","addressLocality":"Riverton","addressRegion":"OR","postalCode":"97000","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"17:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"17:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"10:00","closes":"14:30"}]}
-</script>
+  <meta name="robots" content="noindex, follow">
+  <meta property="og:url" content="https://virgoego90.github.io/demos/ember-oak-restaurant/">
+  <meta property="og:site_name" content="ID Collectives">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ember &amp; Oak restaurant website template, live demo | ID Collectives">
+  <meta name="twitter:description" content="Live demo of the Ember &amp; Oak restaurant website template by ID Collectives. Sample business and content, not a real company. Get the full HTML template for $19.">
+  <meta name="twitter:image" content="https://virgoego90.github.io/demos/ember-oak-restaurant/previews/og.jpg">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<aside class="demo-bar" aria-label="Template demo notice">Live demo of the <strong>Ember & Oak</strong> template. <a href="https://payhip.com/b/ETc26">Get the full template</a> · <a href="https://virgoego90.github.io/#templates">More templates</a></aside>
+<aside class="demo-bar" aria-label="Template demo notice">Live demo of the <strong>Ember & Oak</strong> template. Sample business, names and details, not a real business. <a href="https://payhip.com/b/ETc26">Get the full template</a> · <a href="https://virgoego90.github.io/#templates">More templates</a></aside>
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="index.html" aria-label="Ember &amp; Oak home">
@@ -195,10 +199,10 @@
         <span class="eyebrow">Reservations</span>
         <h2 id="reserve-title">Book a table</h2>
         <p class="lead">Request a table and we'll confirm by email within a few hours. For parties of 9 or more, or to book the whole room, call us.</p>
-        <p><a href="tel:+15550142290" style="color:#fff;font-weight:600">(555) 014-2290</a></p>
+        <p><a title="Sample number in a template demo" style="color:#fff;font-weight:600">(555) 014-2290</a></p>
       </div>
       <div class="card reveal" style="background:#fff">
-        <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" data-demo-form>
+        <form class="form" data-demo-form>
           <div class="form-row">
             <div class="field"><label for="r-name">Full name</label><input id="r-name" name="name" autocomplete="name" required></div>
             <div class="field"><label for="r-email">Email</label><input id="r-email" name="email" type="email" autocomplete="email" required></div>
@@ -212,9 +216,10 @@
           </div>
           <div class="field"><label for="r-notes">Notes <span class="hint">(optional)</span></label><textarea id="r-notes" name="notes" placeholder="Allergies, celebrations, high chair…"></textarea></div>
           <button class="btn btn--primary" type="submit">Request my table</button>
-          <p class="form-success" data-form-success tabindex="-1" role="status" hidden>Thank you! We've received your request and will confirm by email shortly.</p>
+          <p class="form-success" data-form-success tabindex="-1" role="status" hidden>Thank you. In this demo, nothing was sent. When the form is connected, this is where the confirmation appears.</p>
           <p class="form-note">We never share your details. Requests aren't confirmed until you get our email.</p>
-        </form>
+        <p class="form-note" style="font-size:.85rem;opacity:.8">This is a demo form. Nothing is sent anywhere.</p>
+</form>
       </div>
     </div>
   </section>
@@ -237,7 +242,7 @@
             </tbody>
           </table>
         </div>
-        <div class="btn-row"><a class="btn btn--primary" href="https://maps.google.com/?q=Riverton" rel="noopener">Get directions</a><a class="btn btn--ghost" href="tel:+15550142290">Call us</a></div>
+        <div class="btn-row"><a class="btn btn--primary" href="https://maps.google.com/?q=Riverton" rel="noopener">Get directions</a><a class="btn btn--ghost" title="Sample number in a template demo">Call us</a></div>
       </div>
       <div class="map reveal"><img src="assets/img/map.svg" alt="Map showing Ember &amp; Oak on Juniper Street" width="1200" height="900" loading="lazy"></div>
     </div>
@@ -268,7 +273,7 @@
         <a class="brand" href="index.html" style="color:#fff">Ember &amp; Oak</a>
         <p style="margin-top:12px">Wood-fired kitchen &amp; wine bar.<br>214 Juniper Street, Riverton, OR</p>
       </div>
-      <div><h2>Visit</h2><ul><li>Tue–Sat from 5 pm</li><li>Brunch Sat–Sun</li><li><a href="tel:+15550142290">(555) 014-2290</a></li><li><a href="mailto:hello@emberandoak.example">hello@emberandoak.example</a></li></ul></div>
+      <div><h2>Visit</h2><ul><li>Tue–Sat from 5 pm</li><li>Brunch Sat–Sun</li><li><a title="Sample number in a template demo">(555) 014-2290</a></li><li><a href="mailto:hello@emberandoak.example">hello@emberandoak.example</a></li></ul></div>
       <div><h2>Explore</h2><ul><li><a href="menu.html">Full menu</a></li><li><a href="#reserve">Reservations</a></li><li><a href="#faq">FAQ</a></li><li><a href="table-tent.html">QR table card</a></li></ul></div>
       <div><h2>Follow</h2>
         <div class="social">
